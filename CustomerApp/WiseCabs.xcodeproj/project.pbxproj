@@ -1,0 +1,1101 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E2D039314AA68E0006A12D3 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D039214AA68E0006A12D3 /* Address.m */; };
+		0ECD3CA614A0DD90000F8DC6 /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECD3CA314A0DD90000F8DC6 /* tab.png */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		6D1D195D1490C20100647DE7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D195C1490C20100647DE7 /* Reachability.m */; };
+		6D1D19701490C27700647DE7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D196F1490C27700647DE7 /* SystemConfiguration.framework */; };
+		6D1D85F814B1EF9900B676FC /* UserJourneyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D85F414B1EF9900B676FC /* UserJourneyList.m */; };
+		6D1D85F914B1EF9900B676FC /* JourneyNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D85F714B1EF9900B676FC /* JourneyNotification.m */; };
+		6D20150214FF93590034BE04 /* Parked.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D20150114FF93590034BE04 /* Parked.png */; };
+		6D286E671740CEE400DDB6EE /* WiseCabsAppDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D286E661740CEE400DDB6EE /* WiseCabsAppDB.sqlite3 */; };
+		6D2EE62F167F016C00F2EE64 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2EE62C167F016C00F2EE64 /* Default-568h@2x.png */; };
+		6D2EE630167F016C00F2EE64 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2EE62D167F016C00F2EE64 /* Default.png */; };
+		6D2EE631167F016C00F2EE64 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2EE62E167F016C00F2EE64 /* Default@2x.png */; };
+		6D2EE63D167F06E200F2EE64 /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2EE63B167F06E200F2EE64 /* menu-icon.png */; };
+		6D2EE63E167F06E200F2EE64 /* menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2EE63C167F06E200F2EE64 /* menu-icon@2x.png */; };
+		6D2EE676167F2C2400F2EE64 /* AddressSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2EE674167F2C2400F2EE64 /* AddressSearchController.m */; };
+		6D2EE677167F2C2400F2EE64 /* AddressSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2EE675167F2C2400F2EE64 /* AddressSearchController.xib */; };
+		6D2EE6A7167F41E700F2EE64 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2EE6A6167F41E700F2EE64 /* CoreLocation.framework */; };
+		6D2EE6AA167F42A800F2EE64 /* CoreLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2EE6A9167F42A800F2EE64 /* CoreLocation.m */; };
+		6D313A9A169AF01D00813DC1 /* BookingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D313A99169AF01D00813DC1 /* BookingTVC.m */; };
+		6D313A9C169AF5D800813DC1 /* BookingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D313A9B169AF5D800813DC1 /* BookingTVC.xib */; };
+		6D313A9E169B102B00813DC1 /* telephonic.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D313A9D169B102B00813DC1 /* telephonic.png */; };
+		6D34484B14B3049E0030112B /* New_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D34484A14B3049E0030112B /* New_star.png */; };
+		6D3448AE14B31AF50030112B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3448AD14B31AF50030112B /* MBProgressHUD.m */; };
+		6D37A48114D037FD00A358D6 /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D37A48014D037FD00A358D6 /* LoginPage.m */; };
+		6D451D0D1682F0F500376B04 /* CurrentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D451D0C1682F0F500376B04 /* CurrentLocation.png */; };
+		6D451D141682F7C200376B04 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D451D121682F7C200376B04 /* PickerViewController.m */; };
+		6D451D151682F7C200376B04 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D451D131682F7C200376B04 /* PickerViewController.xib */; };
+		6D451D1C16830D9800376B04 /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D451D1B16830D9800376B04 /* CustomSegmentControl.m */; };
+		6D479C55169BFB9700C442AE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D479C53169BFB9700C442AE /* MapViewController.m */; };
+		6D479C56169BFB9700C442AE /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D479C54169BFB9700C442AE /* MapViewController.xib */; };
+		6D479C58169BFC4500C442AE /* PassengerBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D479C57169BFC4500C442AE /* PassengerBar.png */; };
+		6D479CB5169C0D2400C442AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D479CB3169C0CF800C442AE /* MapKit.framework */; };
+		6D4971A71755D8F700746C80 /* FavoriteJourneys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4971A51755D8F700746C80 /* FavoriteJourneys.m */; };
+		6D4971A81755D8F700746C80 /* FavoriteJourneys.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4971A61755D8F700746C80 /* FavoriteJourneys.xib */; };
+		6D4971AC175606F100746C80 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4971AA175606F100746C80 /* LocationTracker.m */; };
+		6D4971AD175606F100746C80 /* LocationTracker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4971AB175606F100746C80 /* LocationTracker.xib */; };
+		6D4A7073174665220025123F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D4A7072174665220025123F /* Entitlements.plist */; };
+		6D4A8882173A516D00553D16 /* SearchedJourneyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4A8880173A516C00553D16 /* SearchedJourneyDetail.m */; };
+		6D4A8883173A516D00553D16 /* SearchedJourneyDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4A8881173A516C00553D16 /* SearchedJourneyDetail.xib */; };
+		6D534A8E14ED1CBE005F58F3 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D534A8C14ED1CBE005F58F3 /* JSONParser.m */; };
+		6D5F6CFD168C497600EA1E77 /* segcontrol_sel-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5F6CF8168C497600EA1E77 /* segcontrol_sel-uns.png */; };
+		6D6D745617420F1D00891005 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D745517420F1D00891005 /* City.m */; };
+		6D6F0F8C169C9D0E00EB3A16 /* RSTapRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F0F85169C9BE900EB3A16 /* RSTapRateView.m */; };
+		6D6F0F8D169C9D0E00EB3A16 /* UIImageView+Reflected.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F0F87169C9BE900EB3A16 /* UIImageView+Reflected.m */; };
+		6D6F0F8E169C9D5900EB3A16 /* star_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6F0F80169C9BE900EB3A16 /* star_empty.png */; };
+		6D6F0F8F169C9D5900EB3A16 /* star_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6F0F81169C9BE900EB3A16 /* star_empty@2x.png */; };
+		6D6F0F90169C9D5900EB3A16 /* star_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6F0F82169C9BE900EB3A16 /* star_full.png */; };
+		6D6F0F91169C9D5900EB3A16 /* star_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6F0F83169C9BE900EB3A16 /* star_full@2x.png */; };
+		6D7314E1169B505400AF39B6 /* Passenger.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7314DF169B505400AF39B6 /* Passenger.png */; };
+		6D7314E2169B505400AF39B6 /* Bag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7314E0169B505400AF39B6 /* Bag.png */; };
+		6D75190E149DF7D9003B091F /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D75190D149DF7D9003B091F /* city.png */; };
+		6D75191C149DFC16003B091F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D751918149DFC16003B091F /* star.png */; };
+		6D75191D149DFC16003B091F /* airport.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D751919149DFC16003B091F /* airport.png */; };
+		6D75191E149DFC16003B091F /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D75191A149DFC16003B091F /* page.png */; };
+		6D75191F149DFC16003B091F /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D75191B149DFC16003B091F /* folder.png */; };
+		6D75192D149DFF92003B091F /* Car.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D75192C149DFF92003B091F /* Car.png */; };
+		6D75194D149E03FF003B091F /* Passengers.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D751947149E03FE003B091F /* Passengers.png */; };
+		6D75194F149E03FF003B091F /* calender.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D751949149E03FF003B091F /* calender.png */; };
+		6D751950149E03FF003B091F /* bags.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D75194A149E03FF003B091F /* bags.png */; };
+		6D7519AA149E10A6003B091F /* plus_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7519A8149E10A6003B091F /* plus_but.png */; };
+		6D7519AB149E10A6003B091F /* min_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7519A9149E10A6003B091F /* min_but.png */; };
+		6D7519BF149E1951003B091F /* shared.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7519BE149E1951003B091F /* shared.png */; };
+		6D7D848A168049E7001A6713 /* Search-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D7D8489168049E7001A6713 /* Search-Icon.png */; };
+		6D82658A14A8F84D0054A10B /* MyBookings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D82658814A8F84D0054A10B /* MyBookings.xib */; };
+		6D89905D174630B400C051F4 /* new_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D89905C174630B400C051F4 /* new_logo.png */; };
+		6D899062174649D400C051F4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D899060174649D400C051F4 /* Icon@2x.png */; };
+		6D899063174649D400C051F4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D899061174649D400C051F4 /* Icon.png */; };
+		6D8DDF62148D1BF10036AC27 /* LoginPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DDF50148D1BF10036AC27 /* LoginPage.xib */; };
+		6D8DDF6D148D1C490036AC27 /* loginButtonBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DDF6A148D1C490036AC27 /* loginButtonBackgroundImage.png */; };
+		6D8DDF7E148D1D790036AC27 /* DetailtableViewCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DDF77148D1D790036AC27 /* DetailtableViewCellBackground.png */; };
+		6D8F11F61491D84100BF4325 /* SQLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F11F51491D84100BF4325 /* SQLHelper.m */; };
+		6D909539175F16D900DEEBCE /* wiscabs_new_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D909538175F16D900DEEBCE /* wiscabs_new_logo.png */; };
+		6D968A92149138D600114580 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D968A91149138D600114580 /* libsqlite3.0.dylib */; };
+		6D9B670C1691927E00EE44C4 /* BookingDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9B670A1691927D00EE44C4 /* BookingDetail.m */; };
+		6D9B670D1691927E00EE44C4 /* BookingDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9B670B1691927D00EE44C4 /* BookingDetail.xib */; };
+		6D9B6757169193AE00EE44C4 /* lowerbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9B6754169193AE00EE44C4 /* lowerbar.png */; };
+		6D9B6758169193AE00EE44C4 /* upperbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9B6755169193AE00EE44C4 /* upperbar.png */; };
+		6D9B6759169193AE00EE44C4 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9B6756169193AE00EE44C4 /* bar.png */; };
+		6D9B67881691A24000EE44C4 /* BookingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9B67861691A24000EE44C4 /* BookingList.m */; };
+		6D9B67891691A24000EE44C4 /* BookingList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9B67871691A24000EE44C4 /* BookingList.xib */; };
+		6DA9791514D01BE10051F2FC /* ActionSheetIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9791214D01BE10051F2FC /* ActionSheetIcon2.png */; };
+		6DA9791614D01BE10051F2FC /* Bluebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9791314D01BE10051F2FC /* Bluebackground.png */; };
+		6DA9791714D01BE10051F2FC /* BlueBackGroundBridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9791414D01BE10051F2FC /* BlueBackGroundBridge.jpg */; };
+		6DA98B6B14CEE0CB00C57E28 /* CoPassengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA98B6A14CEE0CB00C57E28 /* CoPassengerTableViewCell.xib */; };
+		6DA98BF014CEF11400C57E28 /* SearchjourneyDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA98BEF14CEF11400C57E28 /* SearchjourneyDetails.xib */; };
+		6DAC2D7114C748D700224A49 /* OldJourneyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DAC2D7014C748D700224A49 /* OldJourneyTableViewCell.xib */; };
+		6DAD609C148F4714002BB908 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD6097148F4714002BB908 /* Common.m */; };
+		6DAD60C4148F4856002BB908 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD60BB148F4856002BB908 /* NSObject+SBJSON.m */; };
+		6DAD60C5148F4856002BB908 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD60BD148F4856002BB908 /* NSString+SBJSON.m */; };
+		6DAD60C6148F4856002BB908 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD60BF148F4856002BB908 /* SBJsonBase.m */; };
+		6DAD60C7148F4856002BB908 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD60C1148F4856002BB908 /* SBJsonParser.m */; };
+		6DAD60C8148F4856002BB908 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD60C3148F4856002BB908 /* SBJsonWriter.m */; };
+		6DB78D7E14BC36590095DD10 /* DateTime1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB78D7D14BC36590095DD10 /* DateTime1.png */; };
+		6DBE176614D6825600F5E1FA /* WiseCabsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE176514D6825600F5E1FA /* WiseCabsAppDelegate.m */; };
+		6DBEC295149F299D0002A4BD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEC294149F299D0002A4BD /* User.m */; };
+		6DBEF72014A3509E009F3A99 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEF71F14A3509E009F3A99 /* Airport.m */; };
+		6DBF1419149A2589004E804E /* SupplierDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF1415149A2588004E804E /* SupplierDetails.m */; };
+		6DBF141A149A2589004E804E /* Journey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF1417149A2589004E804E /* Journey.m */; };
+		6DBF1421149A26EA004E804E /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF1420149A26EA004E804E /* WebServiceHelper.m */; };
+		6DBF143A149A2785004E804E /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6DBF1439149A2785004E804E /* loader.gif */; };
+		6DBF1477149A2B45004E804E /* JourneyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF1475149A2B45004E804E /* JourneyHelper.m */; };
+		6DCA8B2514C97C1E00436527 /* blue-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA8B2414C97C1E00436527 /* blue-bg.png */; };
+		6DCCEF5E14A9957C00DC64CB /* tableViewCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCCEF5D14A9957C00DC64CB /* tableViewCellBackground.png */; };
+		6DD1E9BF1495E4A8001123ED /* CityAddress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD1E9BD1495E4A8001123ED /* CityAddress.xib */; };
+		6DD302E714ADB9BF0097E87C /* JourneyDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD302E614ADB9BF0097E87C /* JourneyDetails.xib */; };
+		6DD7AA3B169C3DA000EDFF04 /* DisplayMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7AA39169C3C6A00EDFF04 /* DisplayMap.m */; };
+		6DDA8BDA1681AB2D008877A8 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA8BD91681AAC5008877A8 /* OLGhostAlertView.m */; };
+		6DDA8BDD1681B372008877A8 /* ALToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA8BDC1681B0D5008877A8 /* ALToastView.m */; };
+		6DDA8BE11681B40D008877A8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA8BDF1681B40C008877A8 /* SearchViewController.m */; };
+		6DDA8BE21681B40D008877A8 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDA8BE01681B40D008877A8 /* SearchViewController.xib */; };
+		6DDA8C3A1681D2FA008877A8 /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA8C381681D2FA008877A8 /* SearchBarController.m */; };
+		6DDA8C3B1681D2FA008877A8 /* SearchBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDA8C391681D2FA008877A8 /* SearchBarController.xib */; };
+		6DDA8C3E1681D77C008877A8 /* Places.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA8C3D1681D77C008877A8 /* Places.m */; };
+		6DDA8C441681DFA4008877A8 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDA8C431681DFA4008877A8 /* SearchCell.m */; };
+		6DDA8C461681DFF1008877A8 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDA8C451681DFF1008877A8 /* SearchCell.xib */; };
+		6DDB8C0914D3D3AD004BD460 /* shared4-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDB8C0814D3D3AD004BD460 /* shared4-01.png */; };
+		6DDB8C0D14D3D3FD004BD460 /* To icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDB8C0B14D3D3FD004BD460 /* To icon.png */; };
+		6DDB8C0E14D3D3FD004BD460 /* from icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDB8C0C14D3D3FD004BD460 /* from icon.png */; };
+		6DE0A861148FD1690005D2B0 /* CoPassengerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0A860148FD1690005D2B0 /* CoPassengerTableViewCell.m */; };
+		6DE0A889148FD6D30005D2B0 /* OldJourneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0A888148FD6D30005D2B0 /* OldJourneyTableViewCell.m */; };
+		6DE40C1A1494AE8A001B0A9A /* Locality.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE40C191494AE8A001B0A9A /* Locality.m */; };
+		6DE40C1D1494AEB1001B0A9A /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE40C1C1494AEB1001B0A9A /* Location.m */; };
+		6DEA83A51518B2EA00A7B25E /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA83A41518B2EA00A7B25E /* LocationManager.m */; };
+		6DECD24314AC7CBB00E67AA2 /* JourneyDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DECD24114AC7CBB00E67AA2 /* JourneyDetails.m */; };
+		6DF1A31C14D95CD600B1EC63 /* ConfirmJourney.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF1A31B14D95CD600B1EC63 /* ConfirmJourney.m */; };
+		6DFD6F0C149C838A0013AF7C /* UserJourney.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD6F0A149C838A0013AF7C /* UserJourney.m */; };
+		6DFD6F15149C83E00013AF7C /* JourneyReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD6F0F149C83E00013AF7C /* JourneyReceipt.m */; };
+		6DFD6F19149C84080013AF7C /* JourneyReceipt.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD6F16149C84080013AF7C /* JourneyReceipt.xib */; };
+		6DFD6F1A149C84080013AF7C /* CoPassengerDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD6F17149C84080013AF7C /* CoPassengerDetails.xib */; };
+		6DFD6F1B149C84080013AF7C /* ConfirmJourney.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD6F18149C84080013AF7C /* ConfirmJourney.xib */; };
+		6DFE79D4175899E400E4B2EC /* caricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79D2175899E400E4B2EC /* caricon.png */; };
+		6DFE79D717589AF300E4B2EC /* driverlocator.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79D617589AF300E4B2EC /* driverlocator.png */; };
+		6DFE79D917589CA900E4B2EC /* driverlocator1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79D817589CA900E4B2EC /* driverlocator1.png */; };
+		6DFE79E21758A4D300E4B2EC /* SearchViewController@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */; };
+		6DFE79EC1758B41300E4B2EC /* LoginPage@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E2D039114AA68E0006A12D3 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		0E2D039214AA68E0006A12D3 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		0ECD3CA314A0DD90000F8DC6 /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* ABBA Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ABBA Cars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* WiseCabs_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiseCabs_Prefix.pch; sourceTree = "<group>"; };
+		6D1D195B1490C20100647DE7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6D1D195C1490C20100647DE7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6D1D196F1490C27700647DE7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6D1D85F414B1EF9900B676FC /* UserJourneyList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserJourneyList.m; sourceTree = "<group>"; };
+		6D1D85F514B1EF9900B676FC /* UserJourneyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserJourneyList.h; sourceTree = "<group>"; };
+		6D1D85F614B1EF9900B676FC /* JourneyNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyNotification.h; sourceTree = "<group>"; };
+		6D1D85F714B1EF9900B676FC /* JourneyNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyNotification.m; sourceTree = "<group>"; };
+		6D20150114FF93590034BE04 /* Parked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Parked.png; sourceTree = "<group>"; };
+		6D286E661740CEE400DDB6EE /* WiseCabsAppDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WiseCabsAppDB.sqlite3; sourceTree = "<group>"; };
+		6D2EE62C167F016C00F2EE64 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6D2EE62D167F016C00F2EE64 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6D2EE62E167F016C00F2EE64 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6D2EE63B167F06E200F2EE64 /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon.png"; sourceTree = "<group>"; };
+		6D2EE63C167F06E200F2EE64 /* menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon@2x.png"; sourceTree = "<group>"; };
+		6D2EE673167F2C2400F2EE64 /* AddressSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressSearchController.h; sourceTree = "<group>"; };
+		6D2EE674167F2C2400F2EE64 /* AddressSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressSearchController.m; sourceTree = "<group>"; };
+		6D2EE675167F2C2400F2EE64 /* AddressSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressSearchController.xib; path = Classes/AddressSearchController.xib; sourceTree = "<group>"; };
+		6D2EE6A6167F41E700F2EE64 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6D2EE6A8167F42A800F2EE64 /* CoreLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocation.h; sourceTree = "<group>"; };
+		6D2EE6A9167F42A800F2EE64 /* CoreLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocation.m; sourceTree = "<group>"; };
+		6D313A98169AF01D00813DC1 /* BookingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingTVC.h; sourceTree = "<group>"; };
+		6D313A99169AF01D00813DC1 /* BookingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingTVC.m; sourceTree = "<group>"; };
+		6D313A9B169AF5D800813DC1 /* BookingTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingTVC.xib; sourceTree = "<group>"; };
+		6D313A9D169B102B00813DC1 /* telephonic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telephonic.png; sourceTree = "<group>"; };
+		6D34484A14B3049E0030112B /* New_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = New_star.png; sourceTree = "<group>"; };
+		6D3448AC14B31AF50030112B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6D3448AD14B31AF50030112B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6D37A47F14D037FD00A358D6 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginPage.h; path = ../LoginPage.h; sourceTree = "<group>"; };
+		6D37A48014D037FD00A358D6 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginPage.m; path = ../LoginPage.m; sourceTree = "<group>"; };
+		6D451D0C1682F0F500376B04 /* CurrentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CurrentLocation.png; sourceTree = "<group>"; };
+		6D451D111682F7C100376B04 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		6D451D121682F7C200376B04 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		6D451D131682F7C200376B04 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerViewController.xib; path = Classes/PickerViewController.xib; sourceTree = "<group>"; };
+		6D451D1A16830D9800376B04 /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
+		6D451D1B16830D9800376B04 /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
+		6D479C52169BFB9700C442AE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		6D479C53169BFB9700C442AE /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		6D479C54169BFB9700C442AE /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Classes/MapViewController.xib; sourceTree = "<group>"; };
+		6D479C57169BFC4500C442AE /* PassengerBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PassengerBar.png; sourceTree = "<group>"; };
+		6D479CB3169C0CF800C442AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6D4971A41755D8F700746C80 /* FavoriteJourneys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteJourneys.h; sourceTree = "<group>"; };
+		6D4971A51755D8F700746C80 /* FavoriteJourneys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteJourneys.m; sourceTree = "<group>"; };
+		6D4971A61755D8F700746C80 /* FavoriteJourneys.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteJourneys.xib; path = Classes/FavoriteJourneys.xib; sourceTree = "<group>"; };
+		6D4971A9175606F100746C80 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
+		6D4971AA175606F100746C80 /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
+		6D4971AB175606F100746C80 /* LocationTracker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationTracker.xib; path = Classes/LocationTracker.xib; sourceTree = "<group>"; };
+		6D4A7072174665220025123F /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		6D4A887F173A516A00553D16 /* SearchedJourneyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchedJourneyDetail.h; sourceTree = "<group>"; };
+		6D4A8880173A516C00553D16 /* SearchedJourneyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchedJourneyDetail.m; sourceTree = "<group>"; };
+		6D4A8881173A516C00553D16 /* SearchedJourneyDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchedJourneyDetail.xib; path = Classes/SearchedJourneyDetail.xib; sourceTree = "<group>"; };
+		6D534A8C14ED1CBE005F58F3 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		6D534A8D14ED1CBE005F58F3 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		6D5F6CF8168C497600EA1E77 /* segcontrol_sel-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segcontrol_sel-uns.png"; sourceTree = "<group>"; };
+		6D6D745417420F1C00891005 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		6D6D745517420F1D00891005 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		6D6F0F80169C9BE900EB3A16 /* star_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_empty.png; sourceTree = "<group>"; };
+		6D6F0F81169C9BE900EB3A16 /* star_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_empty@2x.png"; sourceTree = "<group>"; };
+		6D6F0F82169C9BE900EB3A16 /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_full.png; sourceTree = "<group>"; };
+		6D6F0F83169C9BE900EB3A16 /* star_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_full@2x.png"; sourceTree = "<group>"; };
+		6D6F0F84169C9BE900EB3A16 /* RSTapRateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTapRateView.h; sourceTree = "<group>"; };
+		6D6F0F85169C9BE900EB3A16 /* RSTapRateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTapRateView.m; sourceTree = "<group>"; };
+		6D6F0F86169C9BE900EB3A16 /* UIImageView+Reflected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Reflected.h"; sourceTree = "<group>"; };
+		6D6F0F87169C9BE900EB3A16 /* UIImageView+Reflected.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Reflected.m"; sourceTree = "<group>"; };
+		6D6F0F8A169C9C6E00EB3A16 /* DemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+		6D7314DF169B505400AF39B6 /* Passenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Passenger.png; sourceTree = "<group>"; };
+		6D7314E0169B505400AF39B6 /* Bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bag.png; sourceTree = "<group>"; };
+		6D75190D149DF7D9003B091F /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
+		6D751918149DFC16003B091F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		6D751919149DFC16003B091F /* airport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airport.png; sourceTree = "<group>"; };
+		6D75191A149DFC16003B091F /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		6D75191B149DFC16003B091F /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		6D75192C149DFF92003B091F /* Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car.png; sourceTree = "<group>"; };
+		6D751947149E03FE003B091F /* Passengers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Passengers.png; sourceTree = "<group>"; };
+		6D751949149E03FF003B091F /* calender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender.png; sourceTree = "<group>"; };
+		6D75194A149E03FF003B091F /* bags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bags.png; sourceTree = "<group>"; };
+		6D7519A8149E10A6003B091F /* plus_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_but.png; sourceTree = "<group>"; };
+		6D7519A9149E10A6003B091F /* min_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = min_but.png; sourceTree = "<group>"; };
+		6D7519BE149E1951003B091F /* shared.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shared.png; sourceTree = "<group>"; };
+		6D7D8489168049E7001A6713 /* Search-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-Icon.png"; sourceTree = "<group>"; };
+		6D7D84B616808BAA001A6713 /* SBTableAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTableAlert.h; sourceTree = "<group>"; };
+		6D7D84B716808BAA001A6713 /* SBTableAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTableAlert.m; sourceTree = "<group>"; };
+		6D82658814A8F84D0054A10B /* MyBookings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MyBookings.xib; path = Classes/MyBookings.xib; sourceTree = "<group>"; };
+		6D89905C174630B400C051F4 /* new_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_logo.png; sourceTree = "<group>"; };
+		6D899060174649D400C051F4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		6D899061174649D400C051F4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		6D8DDF50148D1BF10036AC27 /* LoginPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginPage.xib; path = Classes/LoginPage.xib; sourceTree = "<group>"; };
+		6D8DDF6A148D1C490036AC27 /* loginButtonBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButtonBackgroundImage.png; sourceTree = "<group>"; };
+		6D8DDF77148D1D790036AC27 /* DetailtableViewCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DetailtableViewCellBackground.png; sourceTree = "<group>"; };
+		6D8F11F41491D84100BF4325 /* SQLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLHelper.h; sourceTree = "<group>"; };
+		6D8F11F51491D84100BF4325 /* SQLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLHelper.m; sourceTree = "<group>"; };
+		6D8F12BC1491E50600BF4325 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		6D909538175F16D900DEEBCE /* wiscabs_new_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wiscabs_new_logo.png; sourceTree = "<group>"; };
+		6D968A91149138D600114580 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		6D9B67091691927D00EE44C4 /* BookingDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingDetail.h; sourceTree = "<group>"; };
+		6D9B670A1691927D00EE44C4 /* BookingDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingDetail.m; sourceTree = "<group>"; };
+		6D9B670B1691927D00EE44C4 /* BookingDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookingDetail.xib; path = Classes/BookingDetail.xib; sourceTree = "<group>"; };
+		6D9B6754169193AE00EE44C4 /* lowerbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lowerbar.png; sourceTree = "<group>"; };
+		6D9B6755169193AE00EE44C4 /* upperbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperbar.png; sourceTree = "<group>"; };
+		6D9B6756169193AE00EE44C4 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
+		6D9B67851691A24000EE44C4 /* BookingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingList.h; sourceTree = "<group>"; };
+		6D9B67861691A24000EE44C4 /* BookingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingList.m; sourceTree = "<group>"; };
+		6D9B67871691A24000EE44C4 /* BookingList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookingList.xib; path = Classes/BookingList.xib; sourceTree = "<group>"; };
+		6DA9791214D01BE10051F2FC /* ActionSheetIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActionSheetIcon2.png; sourceTree = "<group>"; };
+		6DA9791314D01BE10051F2FC /* Bluebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bluebackground.png; sourceTree = "<group>"; };
+		6DA9791414D01BE10051F2FC /* BlueBackGroundBridge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BlueBackGroundBridge.jpg; sourceTree = "<group>"; };
+		6DA98B6A14CEE0CB00C57E28 /* CoPassengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoPassengerTableViewCell.xib; sourceTree = "<group>"; };
+		6DA98BEF14CEF11400C57E28 /* SearchjourneyDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchjourneyDetails.xib; sourceTree = "<group>"; };
+		6DAC2D7014C748D700224A49 /* OldJourneyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OldJourneyTableViewCell.xib; sourceTree = "<group>"; };
+		6DAD6096148F4714002BB908 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		6DAD6097148F4714002BB908 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		6DAD609A148F4714002BB908 /* WebServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceHelper.h; sourceTree = "<group>"; };
+		6DAD60B9148F4856002BB908 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		6DAD60BA148F4856002BB908 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		6DAD60BB148F4856002BB908 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		6DAD60BC148F4856002BB908 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		6DAD60BD148F4856002BB908 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		6DAD60BE148F4856002BB908 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		6DAD60BF148F4856002BB908 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		6DAD60C0148F4856002BB908 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		6DAD60C1148F4856002BB908 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		6DAD60C2148F4856002BB908 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		6DAD60C3148F4856002BB908 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		6DB78D7D14BC36590095DD10 /* DateTime1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DateTime1.png; sourceTree = "<group>"; };
+		6DBE176414D6825600F5E1FA /* WiseCabsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiseCabsAppDelegate.h; sourceTree = "<group>"; };
+		6DBE176514D6825600F5E1FA /* WiseCabsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiseCabsAppDelegate.m; sourceTree = "<group>"; };
+		6DBEC293149F299D0002A4BD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6DBEC294149F299D0002A4BD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6DBEF71E14A3509E009F3A99 /* Airport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
+		6DBEF71F14A3509E009F3A99 /* Airport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		6DBF1415149A2588004E804E /* SupplierDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupplierDetails.m; sourceTree = "<group>"; };
+		6DBF1416149A2589004E804E /* SupplierDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupplierDetails.h; sourceTree = "<group>"; };
+		6DBF1417149A2589004E804E /* Journey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Journey.m; sourceTree = "<group>"; };
+		6DBF1418149A2589004E804E /* Journey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Journey.h; sourceTree = "<group>"; };
+		6DBF1420149A26EA004E804E /* WebServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceHelper.m; sourceTree = "<group>"; };
+		6DBF1439149A2785004E804E /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
+		6DBF1475149A2B45004E804E /* JourneyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyHelper.m; sourceTree = "<group>"; };
+		6DBF1476149A2B45004E804E /* JourneyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyHelper.h; sourceTree = "<group>"; };
+		6DCA8B2414C97C1E00436527 /* blue-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-bg.png"; sourceTree = "<group>"; };
+		6DCCEF5D14A9957C00DC64CB /* tableViewCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableViewCellBackground.png; sourceTree = "<group>"; };
+		6DD1E9BD1495E4A8001123ED /* CityAddress.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityAddress.xib; sourceTree = "<group>"; };
+		6DD302E614ADB9BF0097E87C /* JourneyDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneyDetails.xib; sourceTree = "<group>"; };
+		6DD7AA39169C3C6A00EDFF04 /* DisplayMap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayMap.m; sourceTree = "<group>"; };
+		6DD7AA3A169C3C6A00EDFF04 /* DisplayMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayMap.h; sourceTree = "<group>"; };
+		6DDA8BD81681AAC5008877A8 /* OLGhostAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
+		6DDA8BD91681AAC5008877A8 /* OLGhostAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
+		6DDA8BDB1681B0D5008877A8 /* ALToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALToastView.h; sourceTree = "<group>"; };
+		6DDA8BDC1681B0D5008877A8 /* ALToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALToastView.m; sourceTree = "<group>"; };
+		6DDA8BDE1681B40C008877A8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		6DDA8BDF1681B40C008877A8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		6DDA8BE01681B40D008877A8 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = Classes/SearchViewController.xib; sourceTree = "<group>"; };
+		6DDA8C371681D2FA008877A8 /* SearchBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
+		6DDA8C381681D2FA008877A8 /* SearchBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarController.m; sourceTree = "<group>"; };
+		6DDA8C391681D2FA008877A8 /* SearchBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchBarController.xib; path = Classes/SearchBarController.xib; sourceTree = "<group>"; };
+		6DDA8C3C1681D77C008877A8 /* Places.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Places.h; sourceTree = "<group>"; };
+		6DDA8C3D1681D77C008877A8 /* Places.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Places.m; sourceTree = "<group>"; };
+		6DDA8C421681DFA4008877A8 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
+		6DDA8C431681DFA4008877A8 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		6DDA8C451681DFF1008877A8 /* SearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		6DDB8C0814D3D3AD004BD460 /* shared4-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shared4-01.png"; sourceTree = "<group>"; };
+		6DDB8C0B14D3D3FD004BD460 /* To icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "To icon.png"; sourceTree = "<group>"; };
+		6DDB8C0C14D3D3FD004BD460 /* from icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "from icon.png"; sourceTree = "<group>"; };
+		6DE0A85F148FD1690005D2B0 /* CoPassengerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoPassengerTableViewCell.h; sourceTree = "<group>"; };
+		6DE0A860148FD1690005D2B0 /* CoPassengerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoPassengerTableViewCell.m; sourceTree = "<group>"; };
+		6DE0A887148FD6D30005D2B0 /* OldJourneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldJourneyTableViewCell.h; sourceTree = "<group>"; };
+		6DE0A888148FD6D30005D2B0 /* OldJourneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldJourneyTableViewCell.m; sourceTree = "<group>"; };
+		6DE40C181494AE8A001B0A9A /* Locality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locality.h; sourceTree = "<group>"; };
+		6DE40C191494AE8A001B0A9A /* Locality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locality.m; sourceTree = "<group>"; };
+		6DE40C1B1494AEB1001B0A9A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		6DE40C1C1494AEB1001B0A9A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		6DEA83A31518B2EA00A7B25E /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		6DEA83A41518B2EA00A7B25E /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		6DECD24014AC7CBB00E67AA2 /* JourneyDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyDetails.h; sourceTree = "<group>"; };
+		6DECD24114AC7CBB00E67AA2 /* JourneyDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyDetails.m; sourceTree = "<group>"; };
+		6DF1A31A14D95CD600B1EC63 /* ConfirmJourney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmJourney.h; sourceTree = "<group>"; };
+		6DF1A31B14D95CD600B1EC63 /* ConfirmJourney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmJourney.m; sourceTree = "<group>"; };
+		6DFD6F0A149C838A0013AF7C /* UserJourney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserJourney.m; sourceTree = "<group>"; };
+		6DFD6F0B149C838A0013AF7C /* UserJourney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserJourney.h; sourceTree = "<group>"; };
+		6DFD6F0F149C83E00013AF7C /* JourneyReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyReceipt.m; sourceTree = "<group>"; };
+		6DFD6F10149C83E00013AF7C /* JourneyReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyReceipt.h; sourceTree = "<group>"; };
+		6DFD6F16149C84080013AF7C /* JourneyReceipt.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneyReceipt.xib; sourceTree = "<group>"; };
+		6DFD6F17149C84080013AF7C /* CoPassengerDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoPassengerDetails.xib; sourceTree = "<group>"; };
+		6DFD6F18149C84080013AF7C /* ConfirmJourney.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmJourney.xib; sourceTree = "<group>"; };
+		6DFE79D2175899E400E4B2EC /* caricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caricon.png; sourceTree = "<group>"; };
+		6DFE79D617589AF300E4B2EC /* driverlocator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = driverlocator.png; sourceTree = "<group>"; };
+		6DFE79D817589CA900E4B2EC /* driverlocator1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = driverlocator1.png; sourceTree = "<group>"; };
+		6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "SearchViewController@iPhone5.xib"; path = "Classes/SearchViewController@iPhone5.xib"; sourceTree = "<group>"; };
+		6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "LoginPage@iPhone5.xib"; path = "Classes/LoginPage@iPhone5.xib"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* WiseCabs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WiseCabs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D479CB5169C0D2400C442AE /* MapKit.framework in Frameworks */,
+				6D2EE6A7167F41E700F2EE64 /* CoreLocation.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				6D1D19701490C27700647DE7 /* SystemConfiguration.framework in Frameworks */,
+				6D968A92149138D600114580 /* libsqlite3.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6D6F0F7F169C9BB700EB3A16 /* RateStars */,
+				6DE0A88A148FD6E30005D2B0 /* TableViewCell */,
+				6DAD6087148F406D002BB908 /* Entities */,
+				6DAD6086148F4063002BB908 /* Common */,
+				6DAD6068148F3F89002BB908 /* Rechability */,
+				6DF1A31A14D95CD600B1EC63 /* ConfirmJourney.h */,
+				6DF1A31B14D95CD600B1EC63 /* ConfirmJourney.m */,
+				6D37A47F14D037FD00A358D6 /* LoginPage.h */,
+				6D37A48014D037FD00A358D6 /* LoginPage.m */,
+				6DECD24014AC7CBB00E67AA2 /* JourneyDetails.h */,
+				6DECD24114AC7CBB00E67AA2 /* JourneyDetails.m */,
+				6DFD6F10149C83E00013AF7C /* JourneyReceipt.h */,
+				6DFD6F0F149C83E00013AF7C /* JourneyReceipt.m */,
+				6DBE176414D6825600F5E1FA /* WiseCabsAppDelegate.h */,
+				6DBE176514D6825600F5E1FA /* WiseCabsAppDelegate.m */,
+				6D8F12BC1491E50600BF4325 /* sqlite3.h */,
+				6D2EE673167F2C2400F2EE64 /* AddressSearchController.h */,
+				6D2EE674167F2C2400F2EE64 /* AddressSearchController.m */,
+				6DDA8BDE1681B40C008877A8 /* SearchViewController.h */,
+				6DDA8BDF1681B40C008877A8 /* SearchViewController.m */,
+				6DDA8C371681D2FA008877A8 /* SearchBarController.h */,
+				6DDA8C381681D2FA008877A8 /* SearchBarController.m */,
+				6D451D111682F7C100376B04 /* PickerViewController.h */,
+				6D451D121682F7C200376B04 /* PickerViewController.m */,
+				6D451D1A16830D9800376B04 /* CustomSegmentControl.h */,
+				6D451D1B16830D9800376B04 /* CustomSegmentControl.m */,
+				6D9B67091691927D00EE44C4 /* BookingDetail.h */,
+				6D9B670A1691927D00EE44C4 /* BookingDetail.m */,
+				6D9B67851691A24000EE44C4 /* BookingList.h */,
+				6D9B67861691A24000EE44C4 /* BookingList.m */,
+				6D479C52169BFB9700C442AE /* MapViewController.h */,
+				6D479C53169BFB9700C442AE /* MapViewController.m */,
+				6D4A887F173A516A00553D16 /* SearchedJourneyDetail.h */,
+				6D4A8880173A516C00553D16 /* SearchedJourneyDetail.m */,
+				6D4971A41755D8F700746C80 /* FavoriteJourneys.h */,
+				6D4971A51755D8F700746C80 /* FavoriteJourneys.m */,
+				6D4971A9175606F100746C80 /* LocationTracker.h */,
+				6D4971AA175606F100746C80 /* LocationTracker.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* ABBA Cars.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6DAD60B8148F4816002BB908 /* JSON */,
+				32CA4F630368D1EE00C91783 /* WiseCabs_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D286E661740CEE400DDB6EE /* WiseCabsAppDB.sqlite3 */,
+				6D8DDF69148D1C2E0036AC27 /* Images */,
+				6DD1E9BD1495E4A8001123ED /* CityAddress.xib */,
+				6D479C54169BFB9700C442AE /* MapViewController.xib */,
+				6D4971AB175606F100746C80 /* LocationTracker.xib */,
+				6D4971A61755D8F700746C80 /* FavoriteJourneys.xib */,
+				6D9B67871691A24000EE44C4 /* BookingList.xib */,
+				6D9B670B1691927D00EE44C4 /* BookingDetail.xib */,
+				6DD302E614ADB9BF0097E87C /* JourneyDetails.xib */,
+				6DDA8C391681D2FA008877A8 /* SearchBarController.xib */,
+				6D451D131682F7C200376B04 /* PickerViewController.xib */,
+				6DDA8BE01681B40D008877A8 /* SearchViewController.xib */,
+				6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */,
+				6DA98BEF14CEF11400C57E28 /* SearchjourneyDetails.xib */,
+				6D2EE675167F2C2400F2EE64 /* AddressSearchController.xib */,
+				6DFD6F17149C84080013AF7C /* CoPassengerDetails.xib */,
+				6DAC2D7014C748D700224A49 /* OldJourneyTableViewCell.xib */,
+				6D4A8881173A516C00553D16 /* SearchedJourneyDetail.xib */,
+				6DFD6F18149C84080013AF7C /* ConfirmJourney.xib */,
+				6DFD6F16149C84080013AF7C /* JourneyReceipt.xib */,
+				6DA98B6A14CEE0CB00C57E28 /* CoPassengerTableViewCell.xib */,
+				6D8DDF50148D1BF10036AC27 /* LoginPage.xib */,
+				6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */,
+				6D82658814A8F84D0054A10B /* MyBookings.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* WiseCabs-Info.plist */,
+				6D4A7072174665220025123F /* Entitlements.plist */,
+				6DDA8C451681DFF1008877A8 /* SearchCell.xib */,
+				6D313A9B169AF5D800813DC1 /* BookingTVC.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D479CB3169C0CF800C442AE /* MapKit.framework */,
+				6D2EE6A6167F41E700F2EE64 /* CoreLocation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				6D1D196F1490C27700647DE7 /* SystemConfiguration.framework */,
+				6D968A91149138D600114580 /* libsqlite3.0.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D6F0F7F169C9BB700EB3A16 /* RateStars */ = {
+			isa = PBXGroup;
+			children = (
+				6D6F0F8A169C9C6E00EB3A16 /* DemoViewController.xib */,
+				6D6F0F80169C9BE900EB3A16 /* star_empty.png */,
+				6D6F0F81169C9BE900EB3A16 /* star_empty@2x.png */,
+				6D6F0F82169C9BE900EB3A16 /* star_full.png */,
+				6D6F0F83169C9BE900EB3A16 /* star_full@2x.png */,
+				6D6F0F84169C9BE900EB3A16 /* RSTapRateView.h */,
+				6D6F0F85169C9BE900EB3A16 /* RSTapRateView.m */,
+				6D6F0F86169C9BE900EB3A16 /* UIImageView+Reflected.h */,
+				6D6F0F87169C9BE900EB3A16 /* UIImageView+Reflected.m */,
+			);
+			name = RateStars;
+			sourceTree = "<group>";
+		};
+		6D8DDF69148D1C2E0036AC27 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6DFE79D2175899E400E4B2EC /* caricon.png */,
+				6D909538175F16D900DEEBCE /* wiscabs_new_logo.png */,
+				6DFE79D817589CA900E4B2EC /* driverlocator1.png */,
+				6DFE79D617589AF300E4B2EC /* driverlocator.png */,
+				6D899060174649D400C051F4 /* Icon@2x.png */,
+				6D899061174649D400C051F4 /* Icon.png */,
+				6D89905C174630B400C051F4 /* new_logo.png */,
+				6D313A9D169B102B00813DC1 /* telephonic.png */,
+				6D5F6CF8168C497600EA1E77 /* segcontrol_sel-uns.png */,
+				6D9B6754169193AE00EE44C4 /* lowerbar.png */,
+				6D479C57169BFC4500C442AE /* PassengerBar.png */,
+				6D9B6755169193AE00EE44C4 /* upperbar.png */,
+				6D9B6756169193AE00EE44C4 /* bar.png */,
+				6D451D0C1682F0F500376B04 /* CurrentLocation.png */,
+				6D7D8489168049E7001A6713 /* Search-Icon.png */,
+				6D2EE63B167F06E200F2EE64 /* menu-icon.png */,
+				6D2EE63C167F06E200F2EE64 /* menu-icon@2x.png */,
+				6D7314DF169B505400AF39B6 /* Passenger.png */,
+				6D7314E0169B505400AF39B6 /* Bag.png */,
+				6D2EE62C167F016C00F2EE64 /* Default-568h@2x.png */,
+				6D2EE62D167F016C00F2EE64 /* Default.png */,
+				6D2EE62E167F016C00F2EE64 /* Default@2x.png */,
+				6D20150114FF93590034BE04 /* Parked.png */,
+				6DDB8C0B14D3D3FD004BD460 /* To icon.png */,
+				6DDB8C0C14D3D3FD004BD460 /* from icon.png */,
+				6DDB8C0814D3D3AD004BD460 /* shared4-01.png */,
+				6DA9791214D01BE10051F2FC /* ActionSheetIcon2.png */,
+				6DA9791314D01BE10051F2FC /* Bluebackground.png */,
+				6DA9791414D01BE10051F2FC /* BlueBackGroundBridge.jpg */,
+				6DCA8B2414C97C1E00436527 /* blue-bg.png */,
+				6DB78D7D14BC36590095DD10 /* DateTime1.png */,
+				6D34484A14B3049E0030112B /* New_star.png */,
+				6DCCEF5D14A9957C00DC64CB /* tableViewCellBackground.png */,
+				0ECD3CA314A0DD90000F8DC6 /* tab.png */,
+				6D7519BE149E1951003B091F /* shared.png */,
+				6D7519A8149E10A6003B091F /* plus_but.png */,
+				6D7519A9149E10A6003B091F /* min_but.png */,
+				6D751947149E03FE003B091F /* Passengers.png */,
+				6D751949149E03FF003B091F /* calender.png */,
+				6D75194A149E03FF003B091F /* bags.png */,
+				6D75192C149DFF92003B091F /* Car.png */,
+				6D751918149DFC16003B091F /* star.png */,
+				6D751919149DFC16003B091F /* airport.png */,
+				6D75191A149DFC16003B091F /* page.png */,
+				6D75191B149DFC16003B091F /* folder.png */,
+				6D75190D149DF7D9003B091F /* city.png */,
+				6DBF1439149A2785004E804E /* loader.gif */,
+				6D8DDF77148D1D790036AC27 /* DetailtableViewCellBackground.png */,
+				6D8DDF6A148D1C490036AC27 /* loginButtonBackgroundImage.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		6DAD6068148F3F89002BB908 /* Rechability */ = {
+			isa = PBXGroup;
+			children = (
+				6D1D195B1490C20100647DE7 /* Reachability.h */,
+				6D1D195C1490C20100647DE7 /* Reachability.m */,
+			);
+			name = Rechability;
+			sourceTree = "<group>";
+		};
+		6DAD6086148F4063002BB908 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6DDA8BDB1681B0D5008877A8 /* ALToastView.h */,
+				6DDA8BDC1681B0D5008877A8 /* ALToastView.m */,
+				6DDA8BD81681AAC5008877A8 /* OLGhostAlertView.h */,
+				6DDA8BD91681AAC5008877A8 /* OLGhostAlertView.m */,
+				6D7D84B616808BAA001A6713 /* SBTableAlert.h */,
+				6D7D84B716808BAA001A6713 /* SBTableAlert.m */,
+				6D2EE6A8167F42A800F2EE64 /* CoreLocation.h */,
+				6D2EE6A9167F42A800F2EE64 /* CoreLocation.m */,
+				6DEA83A31518B2EA00A7B25E /* LocationManager.h */,
+				6DEA83A41518B2EA00A7B25E /* LocationManager.m */,
+				6D534A8D14ED1CBE005F58F3 /* JSONParser.h */,
+				6D534A8C14ED1CBE005F58F3 /* JSONParser.m */,
+				6D3448AC14B31AF50030112B /* MBProgressHUD.h */,
+				6D3448AD14B31AF50030112B /* MBProgressHUD.m */,
+				6D1D85F614B1EF9900B676FC /* JourneyNotification.h */,
+				6D1D85F714B1EF9900B676FC /* JourneyNotification.m */,
+				6DBF1476149A2B45004E804E /* JourneyHelper.h */,
+				6DBF1475149A2B45004E804E /* JourneyHelper.m */,
+				6DAD6096148F4714002BB908 /* Common.h */,
+				6DAD6097148F4714002BB908 /* Common.m */,
+				6DAD609A148F4714002BB908 /* WebServiceHelper.h */,
+				6DBF1420149A26EA004E804E /* WebServiceHelper.m */,
+				6D8F11F41491D84100BF4325 /* SQLHelper.h */,
+				6D8F11F51491D84100BF4325 /* SQLHelper.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		6DAD6087148F406D002BB908 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6DD7AA39169C3C6A00EDFF04 /* DisplayMap.m */,
+				6DD7AA3A169C3C6A00EDFF04 /* DisplayMap.h */,
+				6D1D85F514B1EF9900B676FC /* UserJourneyList.h */,
+				6D1D85F414B1EF9900B676FC /* UserJourneyList.m */,
+				6DFD6F0B149C838A0013AF7C /* UserJourney.h */,
+				6DFD6F0A149C838A0013AF7C /* UserJourney.m */,
+				6DE40C181494AE8A001B0A9A /* Locality.h */,
+				6DE40C191494AE8A001B0A9A /* Locality.m */,
+				6DE40C1B1494AEB1001B0A9A /* Location.h */,
+				6DE40C1C1494AEB1001B0A9A /* Location.m */,
+				6DBF1416149A2589004E804E /* SupplierDetails.h */,
+				6DBF1415149A2588004E804E /* SupplierDetails.m */,
+				6DBF1418149A2589004E804E /* Journey.h */,
+				6DBF1417149A2589004E804E /* Journey.m */,
+				6DBEC293149F299D0002A4BD /* User.h */,
+				6DBEC294149F299D0002A4BD /* User.m */,
+				6DBEF71E14A3509E009F3A99 /* Airport.h */,
+				6DBEF71F14A3509E009F3A99 /* Airport.m */,
+				0E2D039114AA68E0006A12D3 /* Address.h */,
+				0E2D039214AA68E0006A12D3 /* Address.m */,
+				6DDA8C3C1681D77C008877A8 /* Places.h */,
+				6DDA8C3D1681D77C008877A8 /* Places.m */,
+				6D6D745417420F1C00891005 /* City.h */,
+				6D6D745517420F1D00891005 /* City.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		6DAD60B8148F4816002BB908 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				6DAD60B9148F4856002BB908 /* JSON.h */,
+				6DAD60BA148F4856002BB908 /* NSObject+SBJSON.h */,
+				6DAD60BB148F4856002BB908 /* NSObject+SBJSON.m */,
+				6DAD60BC148F4856002BB908 /* NSString+SBJSON.h */,
+				6DAD60BD148F4856002BB908 /* NSString+SBJSON.m */,
+				6DAD60BE148F4856002BB908 /* SBJsonBase.h */,
+				6DAD60BF148F4856002BB908 /* SBJsonBase.m */,
+				6DAD60C0148F4856002BB908 /* SBJsonParser.h */,
+				6DAD60C1148F4856002BB908 /* SBJsonParser.m */,
+				6DAD60C2148F4856002BB908 /* SBJsonWriter.h */,
+				6DAD60C3148F4856002BB908 /* SBJsonWriter.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		6DE0A88A148FD6E30005D2B0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6DE0A85F148FD1690005D2B0 /* CoPassengerTableViewCell.h */,
+				6DE0A860148FD1690005D2B0 /* CoPassengerTableViewCell.m */,
+				6DE0A887148FD6D30005D2B0 /* OldJourneyTableViewCell.h */,
+				6DE0A888148FD6D30005D2B0 /* OldJourneyTableViewCell.m */,
+				6DDA8C421681DFA4008877A8 /* SearchCell.h */,
+				6DDA8C431681DFA4008877A8 /* SearchCell.m */,
+				6D313A98169AF01D00813DC1 /* BookingTVC.h */,
+				6D313A99169AF01D00813DC1 /* BookingTVC.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* WiseCabs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "WiseCabs" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiseCabs;
+			productName = WiseCabs;
+			productReference = 1D6058910D05DD3D006BFB54 /* ABBA Cars.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "WiseCabs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* WiseCabs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D6F0F8E169C9D5900EB3A16 /* star_empty.png in Resources */,
+				6D6F0F8F169C9D5900EB3A16 /* star_empty@2x.png in Resources */,
+				6D6F0F90169C9D5900EB3A16 /* star_full.png in Resources */,
+				6D6F0F91169C9D5900EB3A16 /* star_full@2x.png in Resources */,
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				6D8DDF62148D1BF10036AC27 /* LoginPage.xib in Resources */,
+				6D8DDF6D148D1C490036AC27 /* loginButtonBackgroundImage.png in Resources */,
+				6D8DDF7E148D1D790036AC27 /* DetailtableViewCellBackground.png in Resources */,
+				6DD1E9BF1495E4A8001123ED /* CityAddress.xib in Resources */,
+				6DBF143A149A2785004E804E /* loader.gif in Resources */,
+				6DFD6F19149C84080013AF7C /* JourneyReceipt.xib in Resources */,
+				6DFD6F1A149C84080013AF7C /* CoPassengerDetails.xib in Resources */,
+				6DFD6F1B149C84080013AF7C /* ConfirmJourney.xib in Resources */,
+				6D75190E149DF7D9003B091F /* city.png in Resources */,
+				6D75191C149DFC16003B091F /* star.png in Resources */,
+				6D75191D149DFC16003B091F /* airport.png in Resources */,
+				6D75191E149DFC16003B091F /* page.png in Resources */,
+				6D75191F149DFC16003B091F /* folder.png in Resources */,
+				6D75192D149DFF92003B091F /* Car.png in Resources */,
+				6D75194D149E03FF003B091F /* Passengers.png in Resources */,
+				6D75194F149E03FF003B091F /* calender.png in Resources */,
+				6D751950149E03FF003B091F /* bags.png in Resources */,
+				6D7519AA149E10A6003B091F /* plus_but.png in Resources */,
+				6D7519AB149E10A6003B091F /* min_but.png in Resources */,
+				6D7519BF149E1951003B091F /* shared.png in Resources */,
+				0ECD3CA614A0DD90000F8DC6 /* tab.png in Resources */,
+				6D82658A14A8F84D0054A10B /* MyBookings.xib in Resources */,
+				6DCCEF5E14A9957C00DC64CB /* tableViewCellBackground.png in Resources */,
+				6DD302E714ADB9BF0097E87C /* JourneyDetails.xib in Resources */,
+				6D34484B14B3049E0030112B /* New_star.png in Resources */,
+				6DB78D7E14BC36590095DD10 /* DateTime1.png in Resources */,
+				6DAC2D7114C748D700224A49 /* OldJourneyTableViewCell.xib in Resources */,
+				6DCA8B2514C97C1E00436527 /* blue-bg.png in Resources */,
+				6DA98B6B14CEE0CB00C57E28 /* CoPassengerTableViewCell.xib in Resources */,
+				6DA98BF014CEF11400C57E28 /* SearchjourneyDetails.xib in Resources */,
+				6DA9791514D01BE10051F2FC /* ActionSheetIcon2.png in Resources */,
+				6DA9791614D01BE10051F2FC /* Bluebackground.png in Resources */,
+				6DA9791714D01BE10051F2FC /* BlueBackGroundBridge.jpg in Resources */,
+				6DDB8C0914D3D3AD004BD460 /* shared4-01.png in Resources */,
+				6DDB8C0D14D3D3FD004BD460 /* To icon.png in Resources */,
+				6DDB8C0E14D3D3FD004BD460 /* from icon.png in Resources */,
+				6D20150214FF93590034BE04 /* Parked.png in Resources */,
+				6D2EE62F167F016C00F2EE64 /* Default-568h@2x.png in Resources */,
+				6D2EE630167F016C00F2EE64 /* Default.png in Resources */,
+				6D2EE631167F016C00F2EE64 /* Default@2x.png in Resources */,
+				6D2EE63D167F06E200F2EE64 /* menu-icon.png in Resources */,
+				6D2EE63E167F06E200F2EE64 /* menu-icon@2x.png in Resources */,
+				6D2EE677167F2C2400F2EE64 /* AddressSearchController.xib in Resources */,
+				6D7D848A168049E7001A6713 /* Search-Icon.png in Resources */,
+				6DDA8BE21681B40D008877A8 /* SearchViewController.xib in Resources */,
+				6DDA8C3B1681D2FA008877A8 /* SearchBarController.xib in Resources */,
+				6DDA8C461681DFF1008877A8 /* SearchCell.xib in Resources */,
+				6D451D0D1682F0F500376B04 /* CurrentLocation.png in Resources */,
+				6D451D151682F7C200376B04 /* PickerViewController.xib in Resources */,
+				6D5F6CFD168C497600EA1E77 /* segcontrol_sel-uns.png in Resources */,
+				6D9B670D1691927E00EE44C4 /* BookingDetail.xib in Resources */,
+				6D9B6757169193AE00EE44C4 /* lowerbar.png in Resources */,
+				6D9B6758169193AE00EE44C4 /* upperbar.png in Resources */,
+				6D9B6759169193AE00EE44C4 /* bar.png in Resources */,
+				6D9B67891691A24000EE44C4 /* BookingList.xib in Resources */,
+				6D313A9C169AF5D800813DC1 /* BookingTVC.xib in Resources */,
+				6D313A9E169B102B00813DC1 /* telephonic.png in Resources */,
+				6D7314E1169B505400AF39B6 /* Passenger.png in Resources */,
+				6D7314E2169B505400AF39B6 /* Bag.png in Resources */,
+				6D479C56169BFB9700C442AE /* MapViewController.xib in Resources */,
+				6D479C58169BFC4500C442AE /* PassengerBar.png in Resources */,
+				6D4A8883173A516D00553D16 /* SearchedJourneyDetail.xib in Resources */,
+				6D286E671740CEE400DDB6EE /* WiseCabsAppDB.sqlite3 in Resources */,
+				6D89905D174630B400C051F4 /* new_logo.png in Resources */,
+				6D899062174649D400C051F4 /* Icon@2x.png in Resources */,
+				6D899063174649D400C051F4 /* Icon.png in Resources */,
+				6D4A7073174665220025123F /* Entitlements.plist in Resources */,
+				6D4971A81755D8F700746C80 /* FavoriteJourneys.xib in Resources */,
+				6D4971AD175606F100746C80 /* LocationTracker.xib in Resources */,
+				6DFE79D4175899E400E4B2EC /* caricon.png in Resources */,
+				6DFE79D717589AF300E4B2EC /* driverlocator.png in Resources */,
+				6DFE79D917589CA900E4B2EC /* driverlocator1.png in Resources */,
+				6DFE79E21758A4D300E4B2EC /* SearchViewController@iPhone5.xib in Resources */,
+				6DFE79EC1758B41300E4B2EC /* LoginPage@iPhone5.xib in Resources */,
+				6D909539175F16D900DEEBCE /* wiscabs_new_logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D6F0F8C169C9D0E00EB3A16 /* RSTapRateView.m in Sources */,
+				6D6F0F8D169C9D0E00EB3A16 /* UIImageView+Reflected.m in Sources */,
+				6DD7AA3B169C3DA000EDFF04 /* DisplayMap.m in Sources */,
+				6DDA8BDD1681B372008877A8 /* ALToastView.m in Sources */,
+				6DDA8BDA1681AB2D008877A8 /* OLGhostAlertView.m in Sources */,
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				6DAD609C148F4714002BB908 /* Common.m in Sources */,
+				6DAD60C4148F4856002BB908 /* NSObject+SBJSON.m in Sources */,
+				6DAD60C5148F4856002BB908 /* NSString+SBJSON.m in Sources */,
+				6DAD60C6148F4856002BB908 /* SBJsonBase.m in Sources */,
+				6DAD60C7148F4856002BB908 /* SBJsonParser.m in Sources */,
+				6DAD60C8148F4856002BB908 /* SBJsonWriter.m in Sources */,
+				6DE0A861148FD1690005D2B0 /* CoPassengerTableViewCell.m in Sources */,
+				6DE0A889148FD6D30005D2B0 /* OldJourneyTableViewCell.m in Sources */,
+				6D1D195D1490C20100647DE7 /* Reachability.m in Sources */,
+				6D8F11F61491D84100BF4325 /* SQLHelper.m in Sources */,
+				6DE40C1A1494AE8A001B0A9A /* Locality.m in Sources */,
+				6DE40C1D1494AEB1001B0A9A /* Location.m in Sources */,
+				6DBF1419149A2589004E804E /* SupplierDetails.m in Sources */,
+				6DBF141A149A2589004E804E /* Journey.m in Sources */,
+				6DBF1421149A26EA004E804E /* WebServiceHelper.m in Sources */,
+				6DBF1477149A2B45004E804E /* JourneyHelper.m in Sources */,
+				6DFD6F0C149C838A0013AF7C /* UserJourney.m in Sources */,
+				6DFD6F15149C83E00013AF7C /* JourneyReceipt.m in Sources */,
+				6DBEC295149F299D0002A4BD /* User.m in Sources */,
+				6DBEF72014A3509E009F3A99 /* Airport.m in Sources */,
+				0E2D039314AA68E0006A12D3 /* Address.m in Sources */,
+				6DECD24314AC7CBB00E67AA2 /* JourneyDetails.m in Sources */,
+				6D1D85F814B1EF9900B676FC /* UserJourneyList.m in Sources */,
+				6D1D85F914B1EF9900B676FC /* JourneyNotification.m in Sources */,
+				6D3448AE14B31AF50030112B /* MBProgressHUD.m in Sources */,
+				6D37A48114D037FD00A358D6 /* LoginPage.m in Sources */,
+				6DBE176614D6825600F5E1FA /* WiseCabsAppDelegate.m in Sources */,
+				6DF1A31C14D95CD600B1EC63 /* ConfirmJourney.m in Sources */,
+				6D534A8E14ED1CBE005F58F3 /* JSONParser.m in Sources */,
+				6DEA83A51518B2EA00A7B25E /* LocationManager.m in Sources */,
+				6D2EE676167F2C2400F2EE64 /* AddressSearchController.m in Sources */,
+				6D2EE6AA167F42A800F2EE64 /* CoreLocation.m in Sources */,
+				6DDA8BE11681B40D008877A8 /* SearchViewController.m in Sources */,
+				6DDA8C3A1681D2FA008877A8 /* SearchBarController.m in Sources */,
+				6DDA8C3E1681D77C008877A8 /* Places.m in Sources */,
+				6DDA8C441681DFA4008877A8 /* SearchCell.m in Sources */,
+				6D451D141682F7C200376B04 /* PickerViewController.m in Sources */,
+				6D451D1C16830D9800376B04 /* CustomSegmentControl.m in Sources */,
+				6D9B670C1691927E00EE44C4 /* BookingDetail.m in Sources */,
+				6D9B67881691A24000EE44C4 /* BookingList.m in Sources */,
+				6D313A9A169AF01D00813DC1 /* BookingTVC.m in Sources */,
+				6D479C55169BFB9700C442AE /* MapViewController.m in Sources */,
+				6D4A8882173A516D00553D16 /* SearchedJourneyDetail.m in Sources */,
+				6D6D745617420F1D00891005 /* City.m in Sources */,
+				6D4971A71755D8F700746C80 /* FavoriteJourneys.m in Sources */,
+				6D4971AC175606F100746C80 /* LocationTracker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WiseCabs_Prefix.pch;
+				INFOPLIST_FILE = "WiseCabs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "ABBA Cars";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WiseCabs_Prefix.pch;
+				INFOPLIST_FILE = "WiseCabs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "ABBA Cars";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DC0216115ADD00E005B6F3E /* Release copy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				SDKROOT = iphoneos;
+			};
+			name = "Release copy";
+		};
+		6DC0216215ADD00E005B6F3E /* Release copy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WiseCabs_Prefix.pch;
+				INFOPLIST_FILE = "WiseCabs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "ABBA Cars";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release copy";
+		};
+		6DD19FA115E7C39300D72C34 /* Release Altec */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				SDKROOT = iphoneos;
+			};
+			name = "Release Altec";
+		};
+		6DD19FA215E7C39300D72C34 /* Release Altec */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WiseCabs_Prefix.pch;
+				INFOPLIST_FILE = "WiseCabs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "ABBA Cars";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Altec";
+		};
+		6DF5916615DE456B00D4AC1C /* Release Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				SDKROOT = iphoneos;
+			};
+			name = "Release Adhoc";
+		};
+		6DF5916715DE456B00D4AC1C /* Release Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WiseCabs_Prefix.pch;
+				INFOPLIST_FILE = "WiseCabs-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "ABBA Cars";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Adhoc";
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "WiseCabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				6DD19FA215E7C39300D72C34 /* Release Altec */,
+				6DF5916715DE456B00D4AC1C /* Release Adhoc */,
+				6DC0216215ADD00E005B6F3E /* Release copy */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "WiseCabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				6DD19FA115E7C39300D72C34 /* Release Altec */,
+				6DF5916615DE456B00D4AC1C /* Release Adhoc */,
+				6DC0216115ADD00E005B6F3E /* Release copy */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
