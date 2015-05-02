@@ -196,14 +196,14 @@ static sqlite3 *database = nil;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 	//return (tableView==self.searchTableView)?self.placesArray.count:self.filteredListContent.count;
-    NSLog(@"placeArray count is %d",[placesArray count]);
+    NSLog(@"placeArray count is %lu",(unsigned long)[placesArray count]);       //64 bit changes
     if(self.placesArray.count>10){
         return (tableView==self.searchTableView)?10:self.filteredListContent.count;
     }
     
     
     if ([self.placeType isEqualToString:@"City"]) {
-        NSLog(@"[filteredListContent count] is-- %d",[self.filteredListContent count]);
+        NSLog(@"[filteredListContent count] is-- %lu",(unsigned long)[self.filteredListContent count]);     //64 bit changes
         return [filteredListContent count];
     }
     return (tableView==self.searchTableView)?self.placesArray.count:self.filteredListContent.count;
@@ -320,7 +320,7 @@ static sqlite3 *database = nil;
     // for inCaseSensitive search
     str = [str uppercaseString];
     NSMutableArray *tempArray=[self.filteredListContent mutableCopy];
-    NSLog(@"tempArray count is %d",[tempArray count]);
+    NSLog(@"tempArray count is %lu",(unsigned long)[tempArray count]);      //64 bit changes
     [self.filteredListContent removeAllObjects];
 	//arForSearch=[[NSMutableArray alloc] init];
 	for (NSString *tempString in tempArray)
@@ -332,7 +332,7 @@ static sqlite3 *database = nil;
         }
 		
     }
-    NSLog(@"filteredListContent count is %d",[filteredListContent count]);
+    NSLog(@"filteredListContent count is %lu",(unsigned long)[filteredListContent count]);      //64 bit changes
 }
 
 
@@ -351,7 +351,7 @@ static sqlite3 *database = nil;
         }
 		
     }
-    NSLog(@"filteredListContent count is %d",[filteredListContent count]);
+    NSLog(@"filteredListContent count is %lu",(unsigned long)[filteredListContent count]);      //64 bit changes
 }
 
 
@@ -424,7 +424,7 @@ static sqlite3 *database = nil;
         
         //[self filterContentForSearchText:searchString];
     }
-    NSLog(@"filteredListContent count is %d",[filteredListContent count]);
+    NSLog(@"filteredListContent count is %lu",(unsigned long)[filteredListContent count]);      //64 bit changes
     //[authenticateActionPool release];
     [self.searchDisplayController.searchResultsTableView reloadData];
     [self.searchTableView reloadData];

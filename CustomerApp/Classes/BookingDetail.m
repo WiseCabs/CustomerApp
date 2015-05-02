@@ -112,16 +112,14 @@
         lblSupplierName.text= [NSString stringWithFormat:@"%@",journey.JourneySupplier.supplierName];
         lblDriverName.text= [NSString stringWithFormat:@"%@",journey.JourneySupplier.cabDriverName];
         lblCabNo.text= [NSString stringWithFormat:@"%@",journey.JourneySupplier.cabDriverNumber];
-        lblBags.text= [NSString stringWithFormat:@"%d",journey.userJourney.NumberOfBags];
-        lblPassengers.text= [NSString stringWithFormat:@"%d",journey.userJourney.NumberOfPassenger];
-         lblFare.text= [NSString stringWithFormat:@"%@ %d",[journey currencySymbol],[[journey userJourney] Fare]];
+        lblBags.text= [NSString stringWithFormat:@"%ld",(long)journey.userJourney.NumberOfBags];    //64 bit changes
+        lblPassengers.text= [NSString stringWithFormat:@"%ld",(long)journey.userJourney.NumberOfPassenger]; //64 bit changes
+         lblFare.text= [NSString stringWithFormat:@"%@ %ld",[journey currencySymbol],(long)[[journey userJourney] Fare]];   //64 bit changes
         
          [btnDriverMobile setTitle:[NSString stringWithFormat:@"%@",journey.JourneySupplier.cabDriverMobile] forState:UIControlStateNormal];
         [btnDriverMobile addTarget:self action:@selector(callDriver:) forControlEvents:UIControlEventTouchUpInside];
                  
         self.favoriteValue=journey.userJourney.IsFavorite;
-       
-        
     }
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -146,7 +144,7 @@
         
         
         NSArray *sdkeys = [NSArray arrayWithObjects:@"ajID",nil];
-        NSArray *sdobjects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",self.journey.alllocatedJnyID], nil];
+        NSArray *sdobjects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%ld",(long)self.journey.alllocatedJnyID], nil];//64 bit changes
         NSDictionary *sdParams = [NSDictionary dictionaryWithObjects:sdobjects forKeys:sdkeys];
         
        
@@ -163,7 +161,6 @@
             if([[statusDict objectForKey:@"success"] boolValue])
             {
                 lbljnyStatus.text= [NSString stringWithFormat:@"%@",[statusDict objectForKey:@"JS_Mobile_Status"]];
-                
             }
         }
     }
@@ -175,7 +172,7 @@
 #pragma mark RSTapRateViewDelegate
 
 - (void)tapDidRateView:(RSTapRateView*)view rating:(NSInteger)rating {
-    NSLog(@"Current rating: %i", rating);
+    NSLog(@"Current rating: %li", (long)rating);        //64 bit changes
     ratedStar=rating;
 }
 
@@ -183,7 +180,7 @@
 #pragma mark private
 
 - (void)send:(id)object {
-    UIAlertView *alertResult = [[UIAlertView alloc] initWithTitle:@"Thanks" message:[NSString stringWithFormat:@"You gave it %i-Stars rating!", self.tapRateView.rating] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+    UIAlertView *alertResult = [[UIAlertView alloc] initWithTitle:@"Thanks" message:[NSString stringWithFormat:@"You gave it %li-Stars rating!", (long)self.tapRateView.rating] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];      //64 bit changes
     [alertResult show];
     [alertResult release];
 }
@@ -233,7 +230,7 @@
     if ([Common isNetworkExist]) {
         if (self.ratedStar>0) {
             [NSThread detachNewThreadSelector:@selector(rateJny) toTarget:self withObject:nil];
-            NSLog(@"Jny rated out of 5 is %d",self.ratedStar);
+            NSLog(@"Jny rated out of 5 is %ld",(long)self.ratedStar);       //64 bit changes
         }
         else{
             [ALToastView toastInView:self.view withText:@"Select one or more stars."];
@@ -255,7 +252,9 @@
    // http://test.wisecabs.com/customer/custrating?jid=55758&rating=4
     
     NSArray *sdkeys = [NSArray arrayWithObjects:@"jid",@"rating",nil];
-    NSArray *sdobjects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",self.journey.JourneyID],[NSString stringWithFormat:@"%d",self.ratedStar], nil];
+    NSArray *sdobjects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%ld",(long)self.journey.JourneyID],
+                                                    [NSString stringWithFormat:@"%ld",(long)self.ratedStar],
+                                                    nil];       //64 bit changes
     NSDictionary *sdParams = [NSDictionary dictionaryWithObjects:sdobjects forKeys:sdkeys];
     
     
@@ -281,7 +280,7 @@
 }
 
 -(void) showSuccessToast{
-    [ALToastView toastInView:self.view withText:[NSString stringWithFormat:@"Journey rated as %d stars",self.ratedStar]];
+    [ALToastView toastInView:self.view withText:[NSString stringWithFormat:@"Journey rated as %ld stars",(long)self.ratedStar]];  //64 bit changes
 }
 
 -(void)setAddresses:(Journey *)jny{
@@ -363,9 +362,9 @@
             if ([Common isNetworkExist]>0)
             {
                 JourneyHelper *helper=[[JourneyHelper alloc] init];
-                NSLog(@" my JourneyID is %d",journey.JourneyID );
+                NSLog(@" my JourneyID is %ld",(long)journey.JourneyID );        //64 bit changes
 			
-                if ([helper markAsFavourite:[NSString stringWithFormat:@"%d",journey.JourneyID]]) {
+                if ([helper markAsFavourite:[NSString stringWithFormat:@"%ld",(long)journey.JourneyID]]) {      //64 bit changes
                 //[Common showAlert:@"Favourite" message:@"Favourite Marked"];
                     [ALToastView toastInView:self.view withText:@"Journey marked as Favourite."];
                     self.favoriteValue=1;
@@ -394,22 +393,18 @@
            
                 if ([journey.jnyStatus isEqualToString:@"On Route"] || [journey.jnyStatus isEqualToString:@"Passenger On Board"]) {
                     MapViewController *mapViewController=[[MapViewController alloc] init];
-                    mapViewController.journeyID=[NSString stringWithFormat:@"%d",journey.JourneyID];
+                    mapViewController.journeyID=[NSString stringWithFormat:@"%ld",(long)journey.JourneyID];     //64 bit changes
                     mapViewController.driverNo=[NSString stringWithFormat:@"%@",lblCabNo.text];
                     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
                     [self.navigationController pushViewController:mapViewController animated:YES];
-                    NSLog(@"journey id %d",journey.JourneyID);
-                }      
-            
+                    NSLog(@"journey id %ld",(long)journey.JourneyID);       //64 bit changes
+                }
             }
             else
             {
                 [ALToastView toastInView:self.view withText:@"No Internet connection"];
             }
-        
         }
-        
-   
 }
 
 - (void)didReceiveMemoryWarning

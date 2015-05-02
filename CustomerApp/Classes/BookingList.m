@@ -60,7 +60,7 @@
 	
 	
     myBookingArray=[[UserJourneyList Journeys] CompletedJourney];
-	NSLog(@"myBookingArray count is: %d",[myBookingArray count]);
+	NSLog(@"myBookingArray count is: %lu",(unsigned long)[myBookingArray count]);       //64 bit changes
 	mainSegmentControl.selectedSegmentIndex=0;
 	[self getUpdatedBookingArray];
 	       // NSLog(@"reloading tableview");
@@ -118,7 +118,7 @@
         NSLog(@"Scheduled journey");
 		myBookingArray=[[UserJourneyList Journeys] ScheduledJourney];
         
-        NSLog(@"Scheduled Journey list count is %d",[myBookingArray count]);
+        NSLog(@"Scheduled Journey list count is %lu",(unsigned long)[myBookingArray count]);    //64 bit changes
         if (myBookingArray!=nil && [self.myBookingArray count]>0) {
             
             
@@ -142,14 +142,14 @@
                 Journey *jny=[uniqueScheduledArray objectAtIndex:i];
                 NSString *jnyDate=jny.userJourney.JourneyDate;
                 NSLog(@"jnydate is %@",jnyDate);
-                NSLog(@"myBookingArray count is %d",[myBookingArray count]);
+                NSLog(@"myBookingArray count is %lu",(unsigned long)[myBookingArray count]);        //64 bit changes
                 allArray=[self.myBookingArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(JourneyDate == %@)", jnyDate]];
                 [self.groupedScheduledArray addObject:allArray];
             }
             
             
             
-            NSLog(@"Completed Journey list count is %d",[myBookingArray count]);
+            NSLog(@"Completed Journey list count is %lu",(unsigned long)[myBookingArray count]);        //64 bit changes
         }
 
         

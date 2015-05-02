@@ -24,7 +24,7 @@
 		//NSInteger userid=91;
 		NSInteger userID=[[[Common loggedInUser] ID] intValue];
 		NSArray *myBookingsKeys = [NSArray arrayWithObjects:@"cid",@"sid",nil];
-		NSArray *myBookingsObjects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d",userID],[NSString stringWithFormat:@"%@", [[Common loggedInUser] suppID]], nil];
+		NSArray *myBookingsObjects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%ld",(long)userID],[NSString stringWithFormat:@"%@", [[Common loggedInUser] suppID]], nil];     //64 bit changes
 		NSDictionary *jmyBookingsParams = [NSDictionary dictionaryWithObjects:myBookingsObjects forKeys:myBookingsKeys];
 		NSString *myBookingsURL=[NSString stringWithFormat:@"%@customer/customerjourney",[Common webserviceURL]];
 		self.resultArray=[servicehelper callWebService:myBookingsURL pms:jmyBookingsParams];
@@ -50,7 +50,7 @@
 		servicehelper.objEntity=suppDetails;
 		[suppDetails release];
 		
-		self.resultArray=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/supplierallocation/journeyId/%d",[Common webserviceURL],journeyID] pms:nil];
+		self.resultArray=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/supplierallocation/journeyId/%ld",[Common webserviceURL],(long)journeyID] pms:nil];        //64 bit changes
 		[servicehelper release];
 		return self.resultArray;
 	}else {
@@ -68,7 +68,7 @@
 		servicehelper.objEntity=userJny;
 		[userJny release];
 	
-		self.resultArray=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/allocation/journeyId/%d",[Common webserviceURL],journeyID] pms:nil];
+		self.resultArray=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/allocation/journeyId/%ld",[Common webserviceURL],(long)journeyID] pms:nil];        //64 bit changes
 		[servicehelper release];
 		return self.resultArray;
 		
@@ -86,7 +86,7 @@
 	{
 		WebServiceHelper *servicehelper=[[WebServiceHelper alloc] init];
 		servicehelper.objEntity=[[[NSObject alloc]init]  autorelease];
-		NSArray *result=[servicehelper callWebService:[NSString stringWithFormat:@"%@customer/canceljourney/journeyId/%d",[Common webserviceURL],journeyID] pms:nil];
+		NSArray *result=[servicehelper callWebService:[NSString stringWithFormat:@"%@customer/canceljourney/journeyId/%ld",[Common webserviceURL],(long)journeyID] pms:nil];        //64 bit changes
 		[servicehelper release];
 		if (result!=nil) {
 			flag= YES;
@@ -110,7 +110,7 @@
 	{
 		WebServiceHelper *servicehelper=[[WebServiceHelper alloc] init];
 		servicehelper.objEntity=[[[NSObject alloc]init]  autorelease];
-		NSArray *result=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/dedicatedtype/journeyId/%d",[Common webserviceURL],journeyID] pms:nil];
+		NSArray *result=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/dedicatedtype/journeyId/%ld",[Common webserviceURL],(long)journeyID] pms:nil];      //64 bit changes
 
 		[servicehelper release];
 		if (result!=nil) {
@@ -260,7 +260,7 @@
 		
 		servicehelper.objEntity=[[[NSObject alloc]init] autorelease];
 		NSArray *keys = [NSArray arrayWithObjects:@"journeyId",@"uid",nil];
-		NSArray *objects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%d", journeyID],uid, nil];
+		NSArray *objects = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%ld", (long)journeyID],uid, nil];     //64 bit changes
 		NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
 		
 		NSArray *result=[servicehelper callWebService:[NSString stringWithFormat:@"%@search/parkedconfirm",[Common webserviceURL]] pms:params];
@@ -365,8 +365,10 @@
 		NSArray *keys = [NSArray arrayWithObjects:@"date",@"bags_no",@"from_house_no",@"from_locality",[NSString stringWithFormat:@"%@", FromLocationId],@"from_postcode",@"from_street_no",@"gender",@"journey_time",@"passengers_no",@"shared",@"to_house_no",@"to_locality",[NSString stringWithFormat:@"%@", ToLocationId],@"to_postcode",@"to_street_no",@"from_airport",@"to_airport",nil];
 		//NSArray *keys = [NSArray arrayWithObjects:@"date",@"bags_no",@"from_house_no",@"from_locality",@"from_airport_id",@"from_postcode",@"from_street_no",@"gender",@"journey_time",@"passengers_no",@"shared",@"to_house_no",@"to_locality",@"to_airport_id",@"to_postcode",@"to_street_no",@"from_airport",@"to_airport",nil];
 		//NSLog(@"all keys %@",keys);
-		NSArray *objects = [NSArray arrayWithObjects:searchedJourney.JourneyDate,[NSString stringWithFormat:@"%d", searchedJourney.NumberOfBags],[searchedJourney FromAddress].HouseNumber,[searchedJourney FromAddress].LocalityId,[searchedJourney FromAddress].LocationId,[searchedJourney FromAddress].PostalCode,@"",
-							@"",searchedJourney.JourneyTime,[NSString stringWithFormat:@"%d",searchedJourney.NumberOfPassenger],journeyType,[searchedJourney ToAddress].HouseNumber,[searchedJourney ToAddress].LocalityId,[searchedJourney ToAddress].LocationId,[searchedJourney ToAddress].PostalCode,@"",searchedJourney.IsFromAirport,searchedJourney.IsToAirport,nil];
+        
+        //64 bit changes
+		NSArray *objects = [NSArray arrayWithObjects:searchedJourney.JourneyDate,[NSString stringWithFormat:@"%ld", (long)searchedJourney.NumberOfBags],[searchedJourney FromAddress].HouseNumber,[searchedJourney FromAddress].LocalityId,[searchedJourney FromAddress].LocationId,[searchedJourney FromAddress].PostalCode,@"",
+							@"",searchedJourney.JourneyTime,[NSString stringWithFormat:@"%ld",(long)searchedJourney.NumberOfPassenger],journeyType,[searchedJourney ToAddress].HouseNumber,[searchedJourney ToAddress].LocalityId,[searchedJourney ToAddress].LocationId,[searchedJourney ToAddress].PostalCode,@"",searchedJourney.IsFromAirport,searchedJourney.IsToAirport,nil];
 		//NSLog(@"all keys %@",objects);
 		NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
 		NSLog(@"all keys %@",params);

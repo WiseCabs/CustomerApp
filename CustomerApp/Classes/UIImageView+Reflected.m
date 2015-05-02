@@ -54,9 +54,9 @@ CGImageRef createGradientImage(int pixelsWide, int pixelsHigh) {
     return nil;
   
   // create a bitmap graphics context the size of the image
-  CGContextRef mainViewContentContext = createBitmapContext(fromImage.bounds.size.width, height);
+  CGContextRef mainViewContentContext = createBitmapContext(fromImage.bounds.size.width, (int)height);      //64 bit changes
   
-  CGImageRef gradientMaskImage = createGradientImage(1, height);
+  CGImageRef gradientMaskImage = createGradientImage(1, (int)height);       //64 bit changes
   
   CGContextClipToMask(mainViewContentContext, CGRectMake(0.0, 0.0, fromImage.bounds.size.width, height), gradientMaskImage);
   CGImageRelease(gradientMaskImage);

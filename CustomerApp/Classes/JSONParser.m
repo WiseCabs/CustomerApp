@@ -181,7 +181,7 @@
         journey.jnyStatus=[currentObject objectForKey:@"Journey_Status"];
         
         
-		NSLog(@"journey id is %d",journey.JourneyID);
+		NSLog(@"journey id is %ld",(long)journey.JourneyID);        //64 bit changes
 		NSInteger totalpassenger=[[currentObject objectForKey:@"Total-Passenger"] intValue];
 		journey.totalpassengers=totalpassenger;
 		NSString *journeyType=[currentObject objectForKey:@"Type_of_Journey"];
@@ -267,7 +267,7 @@
 		[myJourneyDetailArray addObject:journey];
 
 		[journey release];
-		NSLog(@"journey count:%d",[myJourneyDetailArray count]);
+		NSLog(@"journey count:%lu",(unsigned long)[myJourneyDetailArray count]);        //64 bit changes
 
 	}
 	
@@ -285,7 +285,7 @@
 	for(id currentObject in JourneyArray){ 
 		UserJourney *copassenger=[[UserJourney alloc] init];
 		copassenger.TotalCoPassenger=[[currentObject objectForKey:@"total-co-passenger"] intValue];
-		NSLog(@"total copassenger number is %d",copassenger.TotalCoPassenger);
+		NSLog(@"total copassenger number is %ld",(long)copassenger.TotalCoPassenger);       //64 bit changes
 		Address *fromaddress=[[Address alloc] init];
 		copassenger.FromAddress=fromaddress;
 		[fromaddress release];

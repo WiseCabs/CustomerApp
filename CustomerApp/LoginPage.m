@@ -43,7 +43,7 @@
 	
 	[appDelegate isUserloggedIn];
 	NSUInteger viewControllerCount = self.navigationController.viewControllers.count;
-	NSLog(@"controller count is:%i",viewControllerCount);
+	NSLog(@"controller count is:%lu",(unsigned long)viewControllerCount);       //64 bit changes
 	if (![Common isGuestUser]) {
 		NSLog(@"email:%@",[[Common loggedInUser] Email]);
 		NSLog(@"mobile:%@",[[Common loggedInUser] MobileNumber]);

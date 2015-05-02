@@ -31,6 +31,6 @@
 -(BOOL)deleteTables:(NSString*)DeleteQuery;
 -(BOOL)deleteCities;
 -(NSInteger)getUpdatedDateDiff:(NSString*)dbPath;
--(int)howManyDaysHavePast:(NSDate*)lastDate;
+-(NSInteger)howManyDaysHavePast:(NSDate*)lastDate;      //64 bit changes
 -(void)updateTables;
 @end

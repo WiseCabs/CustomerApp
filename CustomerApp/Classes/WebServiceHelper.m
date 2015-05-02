@@ -76,7 +76,7 @@
 	NSLog(@"post is %@",post);
 
 	NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
-	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];        //64 bit changes
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 	[request setHTTPBody:postData];

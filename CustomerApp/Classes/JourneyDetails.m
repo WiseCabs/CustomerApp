@@ -38,19 +38,17 @@
 	DateLabel.text=[NSString stringWithFormat:@"Date: %@",journey.userJourney.JourneyDate];
 	NSString *CapitalTime=[journey.userJourney.JourneyTime uppercaseString];
 	TimeLabel.text=[NSString stringWithFormat:@"Time: %@",CapitalTime];
-	PassengersLabel.text=[NSString stringWithFormat:@"Passengers: %d",journey.userJourney.NumberOfPassenger];
-	BagsLabel.text=[NSString stringWithFormat:@"Bags: %d",journey.userJourney.NumberOfBags];
+    //64 bit changes
+	PassengersLabel.text=[NSString stringWithFormat:@"Passengers: %ld",(long)journey.userJourney.NumberOfPassenger];
+	BagsLabel.text=[NSString stringWithFormat:@"Bags: %ld",(long)journey.userJourney.NumberOfBags];
 	//GenderLabel.text=[NSString stringWithFormat:@"Gender: %@",journey.userJourney.Gender];
-	CoPassengersLabel.text=[NSString stringWithFormat:@"Co-Passengers: %d",[journey.CoPassengers count]];
+	CoPassengersLabel.text=[NSString stringWithFormat:@"Co-Passengers: %lu",(unsigned long)[journey.CoPassengers count]];
 	SupplierNameLabel.text=[NSString stringWithFormat:@"Supplier Name: %@",journey.JourneySupplier.supplierName];
 	CabNumberLabel.text=[NSString stringWithFormat:@"Cab Number: %@",journey.JourneySupplier.cabNumber];
 	CabDriverNameLabel.text=[NSString stringWithFormat:@"Driver Name: %@",journey.JourneySupplier.cabDriverName];
-	NSLog(@"fare is %d",journey.userJourney.Fare);
+	NSLog(@"fare is %ld",(long)journey.userJourney.Fare);
 	
-	
-	
-	
-	NSLog(@"totalpassengers is %d",journey.totalpassengers);
+	NSLog(@"totalpassengers is %ld",(long)journey.totalpassengers);
 	float IndFare = (float)journey.userJourney.Fare /journey.totalpassengers;
 	float AllFare=(float)IndFare*journey.userJourney.NumberOfPassenger;
 	NSLog(@"IndividualFare is %f",IndFare);
@@ -117,7 +115,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSLog(@" count is %d",[journey.CoPassengers count]);
+	NSLog(@" count is %lu",(unsigned long)[journey.CoPassengers count]);        //64 bit changes
 	 return [journey.CoPassengers count];
 	//return 1;
 	
@@ -150,9 +148,9 @@
 				cell.Time.text=[NSString stringWithFormat:@"Time: %@",CapitalCopassengerTime];
 				cell.Date.text=[NSString stringWithFormat:@"Date: %@",jny.JourneyDate];
 				totalCopassenger+=jny.NumberOfPassenger;
-				NSLog(@"total co passenger is %d",totalCopassenger);
-				cell.Passengers.text=[NSString stringWithFormat:@"Passengers: %d",jny.NumberOfPassenger];
-				cell.Bags.text=[NSString stringWithFormat:@"Bags: %d",jny.NumberOfBags];
+				NSLog(@"total co passenger is %ld",(long)totalCopassenger);     //64 bit changes
+				cell.Passengers.text=[NSString stringWithFormat:@"Passengers: %ld",(long)jny.NumberOfPassenger];    //64 bit changes
+				cell.Bags.text=[NSString stringWithFormat:@"Bags: %ld",(long)jny.NumberOfBags];     //64 bit changes
 				cell.Gender.text=[NSString stringWithFormat:@"Gender: %@",jny.Gender];
 				UIImage *myImage = [UIImage imageNamed:@"tableViewCellBackground.png"];
 				UIImageView *imgView = [[UIImageView alloc] initWithImage:myImage];

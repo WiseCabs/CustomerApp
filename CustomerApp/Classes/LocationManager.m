@@ -335,7 +335,7 @@ static sqlite3 *database = nil;
 	//NSString *syncDate=@"2012-03-18 06:00:20";
 	NSDate *date = [dateFormatter dateFromString:syncedDate];
 	NSLog(@"cnverted synceddate is %@",date);
-	int daydiff=-1;
+	NSInteger daydiff = -1;       //64 bit changes
 	
 	if (syncedDate!=@"") {
 		daydiff=[self howManyDaysHavePast:date];
@@ -343,12 +343,12 @@ static sqlite3 *database = nil;
 	else{			
 		daydiff= -1;		
 	}
-	NSLog(@"daydiff is %d",daydiff);
+	NSLog(@"daydiff is %ld",(long)daydiff);     //64 bit changes
 	[dateFormatter release];
 	return daydiff;
 	
 }
--(int)howManyDaysHavePast:(NSDate*)lastDate {
+-(NSInteger)howManyDaysHavePast:(NSDate*)lastDate {     //64 bit changes
 	
 	NSDate *startDate = lastDate;
 	NSDate *endDate = [[NSDate alloc] init];
@@ -359,7 +359,7 @@ static sqlite3 *database = nil;
 	NSDateComponents *components = [gregorian components:unitFlags
 												fromDate:startDate
 												  toDate:endDate options:0];
-	int days = [components day];
+	NSInteger days = [components day];          //64 bit changes
 	[endDate release];
 	//[gregorian release];
 	//[components release];

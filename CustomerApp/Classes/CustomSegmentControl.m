@@ -12,8 +12,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    int oldValue = self.selectedSegmentIndex;
+    NSInteger oldValue = self.selectedSegmentIndex;     //64 bit changes
     [super touchesBegan:touches withEvent:event];
     if ( oldValue == self.selectedSegmentIndex )
         [self sendActionsForControlEvents:UIControlEventValueChanged];

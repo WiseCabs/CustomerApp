@@ -120,8 +120,8 @@
         labelPaymentType.text=[Common paymentType];
         NSLog(@"[common vehicleType is %@", [Common paymentType]);
     }
-    
-	NSLog(@"self.navigationController.viewControllers %i",[self.navigationController.viewControllers count]);
+    //64 bit changes
+	NSLog(@"self.navigationController.viewControllers %lu",(unsigned long)[self.navigationController.viewControllers count]);
 	//self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Reset" style:UIBarButtonItemStylePlain target:self action:@selector(resetPage:)  ] autorelease];
     
 	NSLog(@"from address is :-%@",[[journey FromAddress] AddressText]);
@@ -531,7 +531,7 @@
             
             break;
         default:
-            NSLog(@"No option for: %d", [segmentedControl selectedSegmentIndex]);
+            NSLog(@"No option for: %ld", (long)[segmentedControl selectedSegmentIndex]);    //64 bit changes
     }
 }
 
@@ -596,7 +596,7 @@
 }
 -(IBAction)buttonPassengersMinus:(id)sender
 {
-	NSLog(@"countPassengerNo is: %d",countPassengerNo);
+	NSLog(@"countPassengerNo is: %ld",(long)countPassengerNo);      //64 bit changes
 	countPassengerNo=countPassengerNo-1;
 	
     labelPassengers.text = [NSString stringWithFormat:@"%i", (int)countPassengerNo];
@@ -743,7 +743,7 @@
     
      NSArray *dictValues=[NSArray arrayWithObjects:[fromAddressDict objectForKey:@"placeType"],[toAddressDict objectForKey:@"placeType"],[fromAddressDict objectForKey:@"postCode"],[toAddressDict objectForKey:@"postCode"],[fromAddressDict objectForKey:@"truncatedPlaceName"],[toAddressDict objectForKey:@"truncatedPlaceName"],supplierID,[fromAddressDict objectForKey:@"placeId"],[toAddressDict objectForKey:@"placeId"],labelVehicleType.text, nil];
     
-    NSArray *sdobjects = [NSArray arrayWithObjects:[fromAddressDict objectForKey:@"placeType"],[toAddressDict objectForKey:@"placeType"],[fromAddressDict objectForKey:@"postCode"],[toAddressDict objectForKey:@"postCode"],[fromAddressDict objectForKey:@"truncatedPlaceName"],[toAddressDict objectForKey:@"truncatedPlaceName"],supplierID,[NSString stringWithFormat:@"%d",countBagNo],[NSString stringWithFormat:@"%d",countPassengerNo],self.serviceDate,self.formattedTimeIn24Hour,[fromAddressDict objectForKey:@"placeId"],[toAddressDict objectForKey:@"placeId"],labelVehicleType.text, nil];
+    NSArray *sdobjects = [NSArray arrayWithObjects:[fromAddressDict objectForKey:@"placeType"],[toAddressDict objectForKey:@"placeType"],[fromAddressDict objectForKey:@"postCode"],[toAddressDict objectForKey:@"postCode"],[fromAddressDict objectForKey:@"truncatedPlaceName"],[toAddressDict objectForKey:@"truncatedPlaceName"],supplierID,[NSString stringWithFormat:@"%ld",(long)countBagNo],[NSString stringWithFormat:@"%ld",(long)countPassengerNo],self.serviceDate,self.formattedTimeIn24Hour,[fromAddressDict objectForKey:@"placeId"],[toAddressDict objectForKey:@"placeId"],labelVehicleType.text, nil];        //64 bit changes
 
     NSDictionary *sdparams = [NSDictionary dictionaryWithObjects:sdobjects forKeys:sdkeys];
      NSDictionary *serviceParams = [NSDictionary dictionaryWithObjects:dictValues forKeys:dictKeys];
@@ -760,8 +760,8 @@
         //seachedJourneyDetails.fare=[arrayWithTwoStrings objectAtIndex:0];
         seachedJourneyDetails.fare=[NSString stringWithFormat:@"%@",fare];
         seachedJourneyDetails.distance=[resultDict objectForKey:@"Distance"];
-        seachedJourneyDetails.noOfPassengers=[NSString stringWithFormat:@"%d",countPassengerNo];
-        seachedJourneyDetails.noOfBags=[NSString stringWithFormat:@"%d",countBagNo];
+        seachedJourneyDetails.noOfPassengers=[NSString stringWithFormat:@"%ld",(long)countPassengerNo];     //64 bit changes
+        seachedJourneyDetails.noOfBags=[NSString stringWithFormat:@"%ld",(long)countBagNo];     //64 bit changes
         seachedJourneyDetails.dropAddress=textToAddress.text;
         seachedJourneyDetails.pickUpAddress= textFromAddress.text;
         seachedJourneyDetails.vehicleType= labelVehicleType.text;

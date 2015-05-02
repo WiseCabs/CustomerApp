@@ -45,7 +45,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     self.myBookingArray=[[UserJourneyList Journeys] FavouriteJourney];
-	NSLog(@"myBookingArray count is: %d",[myBookingArray count]);
+	NSLog(@"myBookingArray count is: %lu",(unsigned long)[myBookingArray count]);   //64 bit changes
 	[self getUpdatedBookingArray];
 }
 
@@ -106,14 +106,14 @@
                 Journey *jny=[self.uniqueArray objectAtIndex:i];
                 NSString *jnyDate=jny.userJourney.JourneyDate;
                 NSLog(@"jnydate is %@",jnyDate);
-                NSLog(@"myBookingArray count is %d",[self.myBookingArray count]);
+                NSLog(@"myBookingArray count is %lu",(unsigned long)[self.myBookingArray count]);
                 allArray=[self.myBookingArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(JourneyDate == %@)", jnyDate]];
                 [self.groupedArray addObject:allArray];
             }
             
             
             
-            NSLog(@"Completed Journey list count is %d",[self.myBookingArray count]);
+            NSLog(@"Completed Journey list count is %lu",(unsigned long)[self.myBookingArray count]);
         }
         
         
