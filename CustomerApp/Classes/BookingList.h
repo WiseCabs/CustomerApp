@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import "MainViewController.h"
 
-@interface BookingList : UIViewController<UITableViewDelegate,UITableViewDataSource, UIAlertViewDelegate,MBProgressHUDDelegate>{
+@interface BookingList : MainViewController<UITableViewDelegate,UITableViewDataSource, UIAlertViewDelegate,MBProgressHUDDelegate>{
     IBOutlet UITableView *jnyTableView;
     IBOutlet UISegmentedControl *mainSegmentControl;
     

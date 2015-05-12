@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CoreLocation.h"
 #import "MBProgressHUD.h"
+#import "MainViewController.h"
 
-@interface SearchViewController : UIViewController<CoreLocationDelegate,MBProgressHUDDelegate>
+@interface SearchViewController : MainViewController<CoreLocationDelegate,MBProgressHUDDelegate>
 {
     CoreLocation *locationController;
    

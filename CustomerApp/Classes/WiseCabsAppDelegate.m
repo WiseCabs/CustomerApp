@@ -116,11 +116,25 @@ static sqlite3 *database = nil;
 	UINavigationController *citySearchNavController=[[[UINavigationController alloc] initWithRootViewController:searchViewController] autorelease];
    
 	
-	citySearchNavController.navigationBar.tintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
-	myBookingsNavController.navigationBar.tintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
-    locationTrackerNavController.navigationBar.tintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
-    favoriteJourneysNavController.navigationBar.tintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
+	citySearchNavController.navigationBar.barTintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
+	myBookingsNavController.navigationBar.barTintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
+    locationTrackerNavController.navigationBar.barTintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
+    favoriteJourneysNavController.navigationBar.barTintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
 	
+    [citySearchNavController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [myBookingsNavController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [locationTrackerNavController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [favoriteJourneysNavController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    citySearchNavController.navigationBar.tintColor = [UIColor whiteColor];
+    myBookingsNavController.navigationBar.tintColor = [UIColor whiteColor];
+    locationTrackerNavController.navigationBar.tintColor = [UIColor whiteColor];
+    favoriteJourneysNavController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    maintabBarController.tabBar.barTintColor = [UIColor blackColor];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(38.0/255.0) green:(38.0/255.0) blue:(38.0/255.0) alpha:1.0]];
+    
 	if([[UIApplication sharedApplication] isStatusBarHidden])
         [maintabBarController view].frame = CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height);
 	else
@@ -141,7 +155,9 @@ static sqlite3 *database = nil;
 	NSArray *tabbarArray=[NSArray arrayWithObjects:citySearchNavController,myBookingsNavController,favoriteJourneysNavController,locationTrackerNavController,nil];
 	maintabBarController.viewControllers=tabbarArray;
 	
-	[window addSubview:maintabBarController.view];
+//	[window addSubview:maintabBarController.view];
+    [self.window setRootViewController:maintabBarController];
+
 	
 	
 }

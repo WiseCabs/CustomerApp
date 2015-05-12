@@ -146,6 +146,7 @@
 		6DFE79D917589CA900E4B2EC /* driverlocator1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79D817589CA900E4B2EC /* driverlocator1.png */; };
 		6DFE79E21758A4D300E4B2EC /* SearchViewController@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */; };
 		6DFE79EC1758B41300E4B2EC /* LoginPage@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */; };
+		E58804A91B025B6B00C02270 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58804A81B025B6B00C02270 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -347,6 +348,8 @@
 		6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "SearchViewController@iPhone5.xib"; path = "Classes/SearchViewController@iPhone5.xib"; sourceTree = "<group>"; };
 		6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "LoginPage@iPhone5.xib"; path = "Classes/LoginPage@iPhone5.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* WiseCabs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WiseCabs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E58804A71B025B6B00C02270 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E58804A81B025B6B00C02270 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +411,8 @@
 				6D4971A51755D8F700746C80 /* FavoriteJourneys.m */,
 				6D4971A9175606F100746C80 /* LocationTracker.h */,
 				6D4971AA175606F100746C80 /* LocationTracker.m */,
+				E58804A71B025B6B00C02270 /* MainViewController.h */,
+				E58804A81B025B6B00C02270 /* MainViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				6D9B670C1691927E00EE44C4 /* BookingDetail.m in Sources */,
 				6D9B67881691A24000EE44C4 /* BookingList.m in Sources */,
 				6D313A9A169AF01D00813DC1 /* BookingTVC.m in Sources */,
+				E58804A91B025B6B00C02270 /* MainViewController.m in Sources */,
 				6D479C55169BFB9700C442AE /* MapViewController.m in Sources */,
 				6D4A8882173A516D00553D16 /* SearchedJourneyDetail.m in Sources */,
 				6D6D745617420F1D00891005 /* City.m in Sources */,
@@ -873,8 +879,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -887,8 +893,8 @@
 				INFOPLIST_FILE = "WiseCabs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "ABBA Cars";
-				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				PROVISIONING_PROFILE = "fe251922-272a-43d8-9e83-1c722b03daf8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fe251922-272a-43d8-9e83-1c722b03daf8";
 			};
 			name = Debug;
 		};
@@ -897,8 +903,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -909,8 +915,8 @@
 				INFOPLIST_FILE = "WiseCabs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "ABBA Cars";
-				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				PROVISIONING_PROFILE = "fe251922-272a-43d8-9e83-1c722b03daf8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fe251922-272a-43d8-9e83-1c722b03daf8";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -936,8 +942,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,8 +954,8 @@
 				INFOPLIST_FILE = "WiseCabs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "ABBA Cars";
-				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				PROVISIONING_PROFILE = "fe251922-272a-43d8-9e83-1c722b03daf8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fe251922-272a-43d8-9e83-1c722b03daf8";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release copy";
@@ -975,8 +981,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -987,8 +993,8 @@
 				INFOPLIST_FILE = "WiseCabs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "ABBA Cars";
-				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				PROVISIONING_PROFILE = "fe251922-272a-43d8-9e83-1c722b03daf8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fe251922-272a-43d8-9e83-1c722b03daf8";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release Altec";
@@ -1014,8 +1020,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Woodfield Technologies Limited (2H2M358MAE)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1026,8 +1032,8 @@
 				INFOPLIST_FILE = "WiseCabs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "ABBA Cars";
-				PROVISIONING_PROFILE = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AAC7E3-9D34-4490-83C3-E10349646CF6";
+				PROVISIONING_PROFILE = "fe251922-272a-43d8-9e83-1c722b03daf8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fe251922-272a-43d8-9e83-1c722b03daf8";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release Adhoc";
