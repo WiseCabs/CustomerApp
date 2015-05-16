@@ -185,42 +185,65 @@
             {
                 user.FirstName=[customerDict objectForKey:@"First_Name"];
             }
+            else{
+                user.FirstName = @"";
+            }
             
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"Last_Name"] && [customerDict objectForKey:@"Last_Name"]!=nil &&   [customerDict objectForKey:@"Last_Name"]!=nil && [[[customerDict objectForKey:@"Last_Name"]stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.LastName=[customerDict objectForKey:@"Last_Name"];
+            }
+            else{
+                user.LastName = @"";
             }
             
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"UD_ID"] && [customerDict objectForKey:@"UD_ID"]!=nil &&   [customerDict objectForKey:@"UD_ID"]!=nil && [[[customerDict objectForKey:@"UD_ID"] stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.ID=[customerDict objectForKey:@"UD_ID"];
             }
+            else{
+                user.ID = @"";
+            }
             
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"Email_Id"] && [customerDict objectForKey:@"Email_Id"]!=nil &&   [customerDict objectForKey:@"Email_Id"]!=nil && [[[customerDict objectForKey:@"Email_Id"] stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.Email=[customerDict objectForKey:@"Email_Id"];
+            }
+            else{
+                user.Email = @"";
             }
             
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"Contact_Number"] && [customerDict objectForKey:@"Contact_Number"]!=nil &&   [customerDict objectForKey:@"Contact_Number"]!=nil && [[[customerDict objectForKey:@"Contact_Number"] stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.MobileNumber=[customerDict objectForKey:@"Contact_Number"];
             }
+            else{
+                user.MobileNumber = @"";
+            }
             
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"UD_SD_ID"] && [customerDict objectForKey:@"UD_SD_ID"]!=nil &&   [customerDict objectForKey:@"UD_SD_ID"]!=nil && [[[customerDict objectForKey:@"UD_SD_ID"] stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.suppID=[customerDict objectForKey:@"UD_SD_ID"];
+            }
+            else{
+                user.suppID = @"";
             }
             
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"UD_Username"] && [customerDict objectForKey:@"UD_Username"]!=nil &&   [customerDict objectForKey:@"UD_Username"]!=nil && [[[customerDict objectForKey:@"UD_Username"] stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.userName=[customerDict objectForKey:@"UD_Username"];
             }
+            else{
+                user.userName = @"";
+            }
 
             if ((NSString *)[NSNull null]!=[customerDict objectForKey:@"UD_Password"] && [customerDict objectForKey:@"UD_Password"]!=nil &&   [customerDict objectForKey:@"UD_Password"]!=nil && [[[customerDict objectForKey:@"UD_Password"] stringByReplacingOccurrencesOfString:@" " withString:@"" ] length]>0)
             {
                 user.password=[customerDict objectForKey:@"UD_Password"];
             }
-			
+            else{
+                user.password = @"";
+            }
 			
 			
 			
