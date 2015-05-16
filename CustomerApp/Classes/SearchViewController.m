@@ -74,6 +74,10 @@
        // if([CLLocationManager locationServicesEnabled] &&
            //[CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)	{
         if ([Common isNetworkExist]) {
+            if ([locationController.locationManager respondsToSelector:@selector
+                 (requestWhenInUseAuthorization)]) {
+                [locationController.locationManager requestWhenInUseAuthorization];
+            }
             [locationController.locationManager startUpdatingLocation];
             textFromAddress.text=@"Finding current Location..";
             addressFromGeoCode=@"Yes";
