@@ -12,7 +12,7 @@
 {
     IBOutlet UITextField *textCategoryType;
 	IBOutlet UITextField *textKeyDetails;
-    IBOutlet UIPickerView *CategoryPicker;
+//    IBOutlet UIPickerView *CategoryPicker;
     
     NSMutableArray *categoryArray;
     
@@ -23,7 +23,7 @@
 }
 @property(nonatomic, retain) IBOutlet UITextField *textCategoryType;
 @property(nonatomic, retain) IBOutlet UITextField *textKeyDetails;
-@property(nonatomic, retain) IBOutlet UIPickerView *CategoryPicker;
+//@property(nonatomic, retain) IBOutlet UIPickerView *CategoryPicker;
 
 @property (nonatomic, retain) NSMutableArray *categoryArray;
 

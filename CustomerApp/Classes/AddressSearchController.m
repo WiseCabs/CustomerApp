@@ -22,7 +22,7 @@
 
 @implementation AddressSearchController
 
-@synthesize textKeyDetails,textCategoryType,myParentIS,CategoryPicker,categoryArray,selectedLocationID,selectedLocationName,selectedcategoryName;
+@synthesize textKeyDetails,textCategoryType,myParentIS,/*CategoryPicker,*/categoryArray,selectedLocationID,selectedLocationName,selectedcategoryName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,18 +35,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    textCategoryType.inputView=CategoryPicker;
-     CategoryPicker.hidden=NO;
+//    textCategoryType.inputView=CategoryPicker;
+//     CategoryPicker.hidden=NO;
     if ([myParentIS isEqualToString:@"From Address"]) {
         self.navigationItem.title=@"From Address";
     }
     else{
         self.navigationItem.title=@"To Address";
     }
-    if ([textCategoryType.text isEqualToString:@""]) {
-        textKeyDetails.enabled = NO;
-        textKeyDetails.placeholder=@"Select Category type first";
-    }
+//    if ([textCategoryType.text isEqualToString:@""]) {
+//        textKeyDetails.enabled = NO;
+//        textKeyDetails.placeholder=@"Select Category type first";
+//    }
   //  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
 }
 
@@ -92,12 +92,16 @@
     [textCategoryType addTarget:self action:@selector(textFieldBecameActive:) forControlEvents:UIControlEventEditingDidBegin];
     [textKeyDetails addTarget:self action:@selector(textFieldBecameActive:) forControlEvents:UIControlEventEditingDidBegin];
     
+    textCategoryType.text = @"City";
+    textKeyDetails.placeholder=@"Search..";
+    textCategoryType.enabled = NO;
+
     
-    self.CategoryPicker=[[UIPickerView alloc] initWithFrame:CGRectMake(0,100,320, 500)];
-	[self.CategoryPicker setDelegate:self];
-	self.CategoryPicker.dataSource=self;
-    //[CategoryPicker selectRow:0 inComponent:0 animated:YES];
-	CategoryPicker.showsSelectionIndicator = YES;
+//    self.CategoryPicker=[[UIPickerView alloc] initWithFrame:CGRectMake(0,100,320, 500)];
+//	[self.CategoryPicker setDelegate:self];
+//	self.CategoryPicker.dataSource=self;
+//    //[CategoryPicker selectRow:0 inComponent:0 animated:YES];
+//	CategoryPicker.showsSelectionIndicator = YES;
     
     NSArray *tempArray=[[NSArray alloc] initWithObjects:@"City",@"Airport",@"Tube",@"Train",nil ];
 	self.categoryArray = [NSMutableArray arrayWithArray:tempArray];
@@ -207,32 +211,32 @@
     
 }
 
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-	return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-	return [self.categoryArray count];
-		
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	
-		NSString *categoryName= [self.categoryArray objectAtIndex:row];
-    return categoryName;
-	    
-}
-
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString *categoryName= [self.categoryArray objectAtIndex:row];
-	textCategoryType.text=categoryName;
-    /*if (![textCategoryType.text isEqualToString:@""]) {
-        textKeyDetails.enabled = YES;
-        textKeyDetails.placeholder=@"Search..";
-    }*/
-}
+//
+//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+//	return 1;
+//}
+//
+//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+//	return [self.categoryArray count];
+//		
+//}
+//
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//	
+//		NSString *categoryName= [self.categoryArray objectAtIndex:row];
+//    return categoryName;
+//	    
+//}
+//
+//
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+//    NSString *categoryName= [self.categoryArray objectAtIndex:row];
+//	textCategoryType.text=categoryName;
+//    /*if (![textCategoryType.text isEqualToString:@""]) {
+//        textKeyDetails.enabled = YES;
+//        textKeyDetails.placeholder=@"Search..";
+//    }*/
+//}
 
 
 
@@ -249,7 +253,7 @@
     if (self.textKeyDetails.isFirstResponder) {
         [self.textKeyDetails resignFirstResponder];
     }
-    CategoryPicker.hidden=YES;
+//    CategoryPicker.hidden=YES;
     
 }
 
@@ -257,7 +261,7 @@
     if (self.textKeyDetails.isFirstResponder) {
         [self.textKeyDetails resignFirstResponder];
     }
-    CategoryPicker.hidden=YES;
+//    CategoryPicker.hidden=YES;
     
 }
 - (void)viewDidUnload {
@@ -266,7 +270,7 @@
 
 - (void)dealloc {
 	[myParentIS release];
-    [CategoryPicker release];
+//    [CategoryPicker release];
     [textCategoryType release];
     [textKeyDetails release];
     [categoryArray release];

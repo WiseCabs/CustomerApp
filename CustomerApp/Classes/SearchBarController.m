@@ -41,9 +41,10 @@ static sqlite3 *database = nil;
 {
     [super viewDidLoad];
     self.filteredListContent = [[[NSMutableArray alloc] init] autorelease];
+    self.placeType = @"City";
     
-    if(![self.placeType isEqualToString:@"City"])
-        [self loadPlacesFromDB:self.placeType];
+//    if(![self.placeType isEqualToString:@"City"])
+//        [self loadPlacesFromDB:self.placeType];
     
     self.navigationItem.title= [NSString stringWithFormat:@"%@s",placeType];
     mySearchBar.delegate = self;
@@ -53,16 +54,18 @@ static sqlite3 *database = nil;
   //  self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)] autorelease];
 	[mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
 	[mySearchBar sizeToFit];
-    if ([self.placeType isEqualToString:@"City"])
-    {
-        //NSString *addressName= [self.filteredListContent objectAtIndex:indexPath.row];
-        //NSLog(@"selected address--- %@",addressName);
-    }
+
     
-    else
-    {
-        self.mySearchBar.placeholder = [NSString stringWithFormat:@"Search %@..",placeType];
-    }
+//    if ([self.placeType isEqualToString:@"City"])
+//    {
+//        //NSString *addressName= [self.filteredListContent objectAtIndex:indexPath.row];
+//        //NSLog(@"selected address--- %@",addressName);
+//    }
+//    
+//    else
+//    {
+//        self.mySearchBar.placeholder = [NSString stringWithFormat:@"Search %@..",placeType];
+//    }
 	
     searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:mySearchBar contentsController:self];
 	
@@ -80,62 +83,62 @@ static sqlite3 *database = nil;
 }
 
 
-- (void) loadPlacesFromDB:(NSString*)tableName{
-	//m_db = [[SQLHelper alloc] init];
-	if (placesArray!=nil) {
-		[placesArray release];
-		placesArray=nil;
-	}
-	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
-	WiseCabsAppDelegate *appDelegate = (id)[[UIApplication sharedApplication] delegate];
-	NSString *dbpath = [appDelegate getDBPath];
-	
-	sqlite3_stmt *selectStmt;
-	//NSString *selectPlacesQuery=[NSString stringWithFormat:@"SELECT LocationId,LocationName FROM %@ ",tableName];
-    NSString *selectPlacesQuery=@"";
-    if ([tableName isEqualToString:@"Airport"]) {
-       selectPlacesQuery=[NSString stringWithFormat:@"SELECT PlaceId,PlaceName,PostCode,TruncatedName FROM %@ Where LocalityId=69",tableName];
-    }else{
-        selectPlacesQuery =[NSString stringWithFormat:@"SELECT PlaceId,PlaceName,PostCode,TruncatedName FROM %@ ",tableName];
-    }
-    NSLog(@"selectPlaceQuerry is %@",selectPlacesQuery);
-	
-	if(sqlite3_open([dbpath UTF8String], &database) == SQLITE_OK) {
-		const char *sql = [selectPlacesQuery UTF8String];
-		
-		if(sqlite3_prepare_v2(database, sql, -1, &selectStmt, NULL) != SQLITE_OK)
-			NSAssert1(0, @"Error while creating select statement. '%s'", sqlite3_errmsg(database));
-		
-		placesArray=[[NSMutableArray alloc] init];
-		
-		while(sqlite3_step(selectStmt) == SQLITE_ROW)
-		{
-			Places *places=[[[Places alloc] init] autorelease];
-			places.placeId=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 0)] autorelease];
-			places.placeName=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 1)] autorelease];
-            places.truncatedPlaceName=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 3)] autorelease];
-
-            NSString *postCode=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 2)] autorelease];
-            if([postCode isEqualToString:@"No PostCode"]){
-                places.postCode=@" ";
-            }
-            else{
-                places.postCode=[NSString stringWithFormat:@"%@",postCode];
-            }
-            
-            			
-			[placesArray addObject:places];
-			
-		}
-		//AirportArray=resultArray;
-		
-		//[resultArray release];
-		sqlite3_finalize(selectStmt);
-		
-	}
-	[pool drain];
-	//[airportName release];
-}
+//- (void) loadPlacesFromDB:(NSString*)tableName{
+//	//m_db = [[SQLHelper alloc] init];
+//	if (placesArray!=nil) {
+//		[placesArray release];
+//		placesArray=nil;
+//	}
+//	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
+//	WiseCabsAppDelegate *appDelegate = (id)[[UIApplication sharedApplication] delegate];
+//	NSString *dbpath = [appDelegate getDBPath];
+//	
+//	sqlite3_stmt *selectStmt;
+//	//NSString *selectPlacesQuery=[NSString stringWithFormat:@"SELECT LocationId,LocationName FROM %@ ",tableName];
+//    NSString *selectPlacesQuery=@"";
+//    if ([tableName isEqualToString:@"Airport"]) {
+//       selectPlacesQuery=[NSString stringWithFormat:@"SELECT PlaceId,PlaceName,PostCode,TruncatedName FROM %@ Where LocalityId=69",tableName];
+//    }else{
+//        selectPlacesQuery =[NSString stringWithFormat:@"SELECT PlaceId,PlaceName,PostCode,TruncatedName FROM %@ ",tableName];
+//    }
+//    NSLog(@"selectPlaceQuerry is %@",selectPlacesQuery);
+//	
+//	if(sqlite3_open([dbpath UTF8String], &database) == SQLITE_OK) {
+//		const char *sql = [selectPlacesQuery UTF8String];
+//		
+//		if(sqlite3_prepare_v2(database, sql, -1, &selectStmt, NULL) != SQLITE_OK)
+//			NSAssert1(0, @"Error while creating select statement. '%s'", sqlite3_errmsg(database));
+//		
+//		placesArray=[[NSMutableArray alloc] init];
+//		
+//		while(sqlite3_step(selectStmt) == SQLITE_ROW)
+//		{
+//			Places *places=[[[Places alloc] init] autorelease];
+//			places.placeId=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 0)] autorelease];
+//			places.placeName=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 1)] autorelease];
+//            places.truncatedPlaceName=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 3)] autorelease];
+//
+//            NSString *postCode=[[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(selectStmt, 2)] autorelease];
+//            if([postCode isEqualToString:@"No PostCode"]){
+//                places.postCode=@" ";
+//            }
+//            else{
+//                places.postCode=[NSString stringWithFormat:@"%@",postCode];
+//            }
+//            
+//            			
+//			[placesArray addObject:places];
+//			
+//		}
+//		//AirportArray=resultArray;
+//		
+//		//[resultArray release];
+//		sqlite3_finalize(selectStmt);
+//		
+//	}
+//	[pool drain];
+//	//[airportName release];
+//}
 
 - (IBAction) cancel:(id)sender
 {
@@ -237,7 +240,6 @@ static sqlite3 *database = nil;
     cell.textLabel.text=[NSString stringWithFormat:@"%@",places.placeName];
     cell.detailTextLabel.text=[NSString stringWithFormat:@"%@",places.placeId];
     }
-   // [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 
     return cell;
 }
