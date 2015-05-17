@@ -16,6 +16,7 @@
 #import "BookingList.h"
 #import "FavoriteJourneys.h"
 #import "LocationTracker.h"
+#import "WCHomeMapViewController.h"
 
 @implementation WiseCabsAppDelegate
 @synthesize window,maintabBarController,splashView;
@@ -104,6 +105,9 @@ static sqlite3 *database = nil;
         }
     }
     //=[[[SearchViewController alloc] init] autorelease];
+    
+    WCHomeMapViewController *wcHomeMapViewController = [[WCHomeMapViewController alloc]initWithNibName:@"WCHomeMapViewController" bundle:nil];
+    
 	float rd = 4.00/255.00;
 	float gr = 152.00/255.00;
 	float bl = 229.00/255.00;
@@ -113,7 +117,7 @@ static sqlite3 *database = nil;
 	UINavigationController *myBookingsNavController=[[[UINavigationController alloc] initWithRootViewController:myBookings] autorelease];
     UINavigationController *favoriteJourneysNavController=[[[UINavigationController alloc] initWithRootViewController:favoriteJourneys] autorelease];
     UINavigationController *locationTrackerNavController=[[[UINavigationController alloc] initWithRootViewController:locationTracker] autorelease];
-	UINavigationController *citySearchNavController=[[[UINavigationController alloc] initWithRootViewController:searchViewController] autorelease];
+	UINavigationController *citySearchNavController=[[[UINavigationController alloc] initWithRootViewController:wcHomeMapViewController] autorelease];
    
 	
 	citySearchNavController.navigationBar.barTintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
@@ -132,6 +136,7 @@ static sqlite3 *database = nil;
     favoriteJourneysNavController.navigationBar.tintColor = [UIColor whiteColor];
     
     maintabBarController.tabBar.barTintColor = [UIColor blackColor];
+    maintabBarController.tabBar.translucent =   NO;
     
     [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(38.0/255.0) green:(38.0/255.0) blue:(38.0/255.0) alpha:1.0]];
     

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WCHomeMapViewController">
+            <connections>
+                <outlet property="homeMapView" destination="Ngc-du-oj2" id="744-PK-10F"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-By-xeO">
+                    <rect key="frame" x="0.0" y="415" width="160" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="DXI-cL-JeV"/>
+                        <constraint firstAttribute="height" constant="40" id="cpK-Q2-Hlt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Another Pick-Up Location">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pickUpLocation:" destination="-1" eventType="touchUpInside" id="VZ1-hz-fnS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYb-ad-9e1">
+                    <rect key="frame" x="160" y="415" width="160" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Enter Destination">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="destination:" destination="-1" eventType="touchUpInside" id="JV0-r9-2eB"/>
+                    </connections>
+                </button>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngc-du-oj2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
+                </mapView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ojc-By-xeO" firstAttribute="width" secondItem="pYb-ad-9e1" secondAttribute="width" id="42h-yB-kel"/>
+                <constraint firstItem="Ngc-du-oj2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8MF-vL-VCH"/>
+                <constraint firstItem="Ojc-By-xeO" firstAttribute="height" secondItem="pYb-ad-9e1" secondAttribute="height" id="KlW-yd-4iw"/>
+                <constraint firstItem="Ojc-By-xeO" firstAttribute="top" secondItem="Ngc-du-oj2" secondAttribute="bottom" id="Lsd-xt-fmz"/>
+                <constraint firstItem="pYb-ad-9e1" firstAttribute="top" secondItem="Ngc-du-oj2" secondAttribute="bottom" id="Oe3-VQ-wVT"/>
+                <constraint firstAttribute="trailing" secondItem="pYb-ad-9e1" secondAttribute="trailing" id="cy9-Ym-2Sh"/>
+                <constraint firstAttribute="bottom" secondItem="pYb-ad-9e1" secondAttribute="bottom" id="gyi-6b-ycj"/>
+                <constraint firstItem="Ojc-By-xeO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nuE-jX-ShC"/>
+                <constraint firstItem="Ngc-du-oj2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wXZ-Xh-OgR"/>
+                <constraint firstAttribute="trailing" secondItem="Ngc-du-oj2" secondAttribute="trailing" id="wqz-zh-sBb"/>
+                <constraint firstAttribute="bottom" secondItem="Ojc-By-xeO" secondAttribute="bottom" id="zgS-YU-M3q"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <point key="canvasLocation" x="375" y="184"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

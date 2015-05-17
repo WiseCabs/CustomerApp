@@ -146,6 +146,9 @@
 		6DFE79D917589CA900E4B2EC /* driverlocator1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79D817589CA900E4B2EC /* driverlocator1.png */; };
 		6DFE79E21758A4D300E4B2EC /* SearchViewController@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */; };
 		6DFE79EC1758B41300E4B2EC /* LoginPage@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */; };
+		E552AC571B08D801004A051D /* WCHomeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E552AC551B08D801004A051D /* WCHomeMapViewController.m */; };
+		E552AC581B08D801004A051D /* WCHomeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E552AC561B08D801004A051D /* WCHomeMapViewController.xib */; };
+		E552AC611B0924AE004A051D /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E552AC601B0924AE004A051D /* MyAnnotation.m */; };
 		E58804A91B025B6B00C02270 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58804A81B025B6B00C02270 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -348,6 +351,11 @@
 		6DFE79E01758A4D300E4B2EC /* SearchViewController@iPhone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "SearchViewController@iPhone5.xib"; path = "Classes/SearchViewController@iPhone5.xib"; sourceTree = "<group>"; };
 		6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "LoginPage@iPhone5.xib"; path = "Classes/LoginPage@iPhone5.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* WiseCabs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WiseCabs-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E552AC541B08D801004A051D /* WCHomeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHomeMapViewController.h; sourceTree = "<group>"; };
+		E552AC551B08D801004A051D /* WCHomeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHomeMapViewController.m; sourceTree = "<group>"; };
+		E552AC561B08D801004A051D /* WCHomeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCHomeMapViewController.xib; sourceTree = "<group>"; };
+		E552AC5F1B0924AE004A051D /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		E552AC601B0924AE004A051D /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		E58804A71B025B6B00C02270 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E58804A81B025B6B00C02270 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -378,23 +386,28 @@
 				6DAD6087148F406D002BB908 /* Entities */,
 				6DAD6086148F4063002BB908 /* Common */,
 				6DAD6068148F3F89002BB908 /* Rechability */,
-				6DF1A31A14D95CD600B1EC63 /* ConfirmJourney.h */,
-				6DF1A31B14D95CD600B1EC63 /* ConfirmJourney.m */,
-				6D37A47F14D037FD00A358D6 /* LoginPage.h */,
-				6D37A48014D037FD00A358D6 /* LoginPage.m */,
-				6DECD24014AC7CBB00E67AA2 /* JourneyDetails.h */,
-				6DECD24114AC7CBB00E67AA2 /* JourneyDetails.m */,
-				6DFD6F10149C83E00013AF7C /* JourneyReceipt.h */,
-				6DFD6F0F149C83E00013AF7C /* JourneyReceipt.m */,
 				6DBE176414D6825600F5E1FA /* WiseCabsAppDelegate.h */,
 				6DBE176514D6825600F5E1FA /* WiseCabsAppDelegate.m */,
-				6D8F12BC1491E50600BF4325 /* sqlite3.h */,
-				6D2EE673167F2C2400F2EE64 /* AddressSearchController.h */,
-				6D2EE674167F2C2400F2EE64 /* AddressSearchController.m */,
+				E58804A71B025B6B00C02270 /* MainViewController.h */,
+				E58804A81B025B6B00C02270 /* MainViewController.m */,
+				6D37A47F14D037FD00A358D6 /* LoginPage.h */,
+				6D37A48014D037FD00A358D6 /* LoginPage.m */,
+				E552AC541B08D801004A051D /* WCHomeMapViewController.h */,
+				E552AC551B08D801004A051D /* WCHomeMapViewController.m */,
+				E552AC561B08D801004A051D /* WCHomeMapViewController.xib */,
 				6DDA8BDE1681B40C008877A8 /* SearchViewController.h */,
 				6DDA8BDF1681B40C008877A8 /* SearchViewController.m */,
 				6DDA8C371681D2FA008877A8 /* SearchBarController.h */,
 				6DDA8C381681D2FA008877A8 /* SearchBarController.m */,
+				6D2EE673167F2C2400F2EE64 /* AddressSearchController.h */,
+				6D2EE674167F2C2400F2EE64 /* AddressSearchController.m */,
+				6DF1A31A14D95CD600B1EC63 /* ConfirmJourney.h */,
+				6DF1A31B14D95CD600B1EC63 /* ConfirmJourney.m */,
+				6DECD24014AC7CBB00E67AA2 /* JourneyDetails.h */,
+				6DECD24114AC7CBB00E67AA2 /* JourneyDetails.m */,
+				6DFD6F10149C83E00013AF7C /* JourneyReceipt.h */,
+				6DFD6F0F149C83E00013AF7C /* JourneyReceipt.m */,
+				6D8F12BC1491E50600BF4325 /* sqlite3.h */,
 				6D451D111682F7C100376B04 /* PickerViewController.h */,
 				6D451D121682F7C200376B04 /* PickerViewController.m */,
 				6D451D1A16830D9800376B04 /* CustomSegmentControl.h */,
@@ -411,8 +424,8 @@
 				6D4971A51755D8F700746C80 /* FavoriteJourneys.m */,
 				6D4971A9175606F100746C80 /* LocationTracker.h */,
 				6D4971AA175606F100746C80 /* LocationTracker.m */,
-				E58804A71B025B6B00C02270 /* MainViewController.h */,
-				E58804A81B025B6B00C02270 /* MainViewController.m */,
+				E552AC5F1B0924AE004A051D /* MyAnnotation.h */,
+				E552AC601B0924AE004A051D /* MyAnnotation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -784,6 +797,7 @@
 				6D9B6757169193AE00EE44C4 /* lowerbar.png in Resources */,
 				6D9B6758169193AE00EE44C4 /* upperbar.png in Resources */,
 				6D9B6759169193AE00EE44C4 /* bar.png in Resources */,
+				E552AC581B08D801004A051D /* WCHomeMapViewController.xib in Resources */,
 				6D9B67891691A24000EE44C4 /* BookingList.xib in Resources */,
 				6D313A9C169AF5D800813DC1 /* BookingTVC.xib in Resources */,
 				6D313A9E169B102B00813DC1 /* telephonic.png in Resources */,
@@ -821,6 +835,7 @@
 				6DDA8BDD1681B372008877A8 /* ALToastView.m in Sources */,
 				6DDA8BDA1681AB2D008877A8 /* OLGhostAlertView.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				E552AC571B08D801004A051D /* WCHomeMapViewController.m in Sources */,
 				6DAD609C148F4714002BB908 /* Common.m in Sources */,
 				6DAD60C4148F4856002BB908 /* NSObject+SBJSON.m in Sources */,
 				6DAD60C5148F4856002BB908 /* NSString+SBJSON.m in Sources */,
@@ -835,6 +850,7 @@
 				6DE40C1D1494AEB1001B0A9A /* Location.m in Sources */,
 				6DBF1419149A2589004E804E /* SupplierDetails.m in Sources */,
 				6DBF141A149A2589004E804E /* Journey.m in Sources */,
+				E552AC611B0924AE004A051D /* MyAnnotation.m in Sources */,
 				6DBF1421149A26EA004E804E /* WebServiceHelper.m in Sources */,
 				6DBF1477149A2B45004E804E /* JourneyHelper.m in Sources */,
 				6DFD6F0C149C838A0013AF7C /* UserJourney.m in Sources */,
