@@ -148,7 +148,6 @@
 		6DFE79EC1758B41300E4B2EC /* LoginPage@iPhone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE79EA1758B41300E4B2EC /* LoginPage@iPhone5.xib */; };
 		E552AC571B08D801004A051D /* WCHomeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E552AC551B08D801004A051D /* WCHomeMapViewController.m */; };
 		E552AC581B08D801004A051D /* WCHomeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E552AC561B08D801004A051D /* WCHomeMapViewController.xib */; };
-		E552AC611B0924AE004A051D /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E552AC601B0924AE004A051D /* MyAnnotation.m */; };
 		E58804A91B025B6B00C02270 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58804A81B025B6B00C02270 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -354,8 +353,6 @@
 		E552AC541B08D801004A051D /* WCHomeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHomeMapViewController.h; sourceTree = "<group>"; };
 		E552AC551B08D801004A051D /* WCHomeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHomeMapViewController.m; sourceTree = "<group>"; };
 		E552AC561B08D801004A051D /* WCHomeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCHomeMapViewController.xib; sourceTree = "<group>"; };
-		E552AC5F1B0924AE004A051D /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
-		E552AC601B0924AE004A051D /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		E58804A71B025B6B00C02270 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E58804A81B025B6B00C02270 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,8 +421,6 @@
 				6D4971A51755D8F700746C80 /* FavoriteJourneys.m */,
 				6D4971A9175606F100746C80 /* LocationTracker.h */,
 				6D4971AA175606F100746C80 /* LocationTracker.m */,
-				E552AC5F1B0924AE004A051D /* MyAnnotation.h */,
-				E552AC601B0924AE004A051D /* MyAnnotation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -850,7 +845,6 @@
 				6DE40C1D1494AEB1001B0A9A /* Location.m in Sources */,
 				6DBF1419149A2589004E804E /* SupplierDetails.m in Sources */,
 				6DBF141A149A2589004E804E /* Journey.m in Sources */,
-				E552AC611B0924AE004A051D /* MyAnnotation.m in Sources */,
 				6DBF1421149A26EA004E804E /* WebServiceHelper.m in Sources */,
 				6DBF1477149A2B45004E804E /* JourneyHelper.m in Sources */,
 				6DFD6F0C149C838A0013AF7C /* UserJourney.m in Sources */,
