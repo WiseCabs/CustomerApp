@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WCSearchBarControllerDelegate <NSObject>
+
+- (void)dismissSearchBarController;
+
+@end
+
 @interface SearchBarController : UIViewController<UISearchDisplayDelegate, UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     UISearchDisplayController	*searchDisplayController;
@@ -31,6 +37,7 @@
 @property (nonatomic, retain) NSMutableArray *placesArray;
 @property (nonatomic, retain) NSArray *listContent;	
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
+@property (nonatomic)   id<WCSearchBarControllerDelegate> delegate;
 
 -(void)getCityAddresses;
 

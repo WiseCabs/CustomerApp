@@ -13,13 +13,14 @@
 #import "Journey.h" 
 #import "Common.h"
 #import "WebServiceHelper.h"
+#import "SearchViewController.h"
 
 @interface SearchBarController ()
 
 @end
 
 @implementation SearchBarController
-@synthesize searchDisplayController,searchTableView,placesArray,mySearchBar,listContent,filteredListContent,myParentIS,placeType, searchedCityString;
+@synthesize searchDisplayController,searchTableView,placesArray,mySearchBar,listContent,filteredListContent,myParentIS,placeType, searchedCityString,delegate;
 static sqlite3 *database = nil;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -164,38 +165,38 @@ static sqlite3 *database = nil;
 	
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    // create the parent view that will hold header Label
-    if ([myParentIS isEqualToString:@"From Address"]) {
-    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 320.0, 44.0)];
-    
-    // create the button object
-    UIButton * headerBtn = [[UIButton alloc] initWithFrame:CGRectZero];
-    headerBtn.backgroundColor =  [UIColor blueColor];
-    headerBtn.opaque = NO;
-    headerBtn.frame = CGRectMake(0.0, 0.0, 320.0, 44.0);
-    [headerBtn setTitle:@"   Current Location." forState:UIControlStateNormal];
-    [headerBtn addTarget:self action:@selector(currentLocationSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [customView addSubview:headerBtn];
-    
-   
-    return customView;
-         }
-    else{
-        return nil;
-    }
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    // create the parent view that will hold header Label
+//    if ([myParentIS isEqualToString:@"From Address"]) {
+//    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 320.0, 44.0)];
+//    
+//    // create the button object
+//    UIButton * headerBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+//    headerBtn.backgroundColor =  [UIColor blueColor];
+//    headerBtn.opaque = NO;
+//    headerBtn.frame = CGRectMake(0.0, 0.0, 320.0, 44.0);
+//    [headerBtn setTitle:@"   Current Location." forState:UIControlStateNormal];
+//    [headerBtn addTarget:self action:@selector(currentLocationSelected:) forControlEvents:UIControlEventTouchUpInside];
+//    [customView addSubview:headerBtn];
+//    
+//   
+//    return customView;
+//         }
+//    else{
+//        return nil;
+//    }
+//}
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if ([myParentIS isEqualToString:@"From Address"]) {
-    return 44.0;
-    }
-    else{
-         return 0.0;
-    }
-}
+//- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    if ([myParentIS isEqualToString:@"From Address"]) {
+//    return 44.0;
+//    }
+//    else{
+//         return 0.0;
+//    }
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 	//return (tableView==self.searchTableView)?self.placesArray.count:self.filteredListContent.count;
@@ -279,10 +280,10 @@ static sqlite3 *database = nil;
         [placeDict setObject: @"city" forKey:@"placeType"];
         [placeDict setObject:placeName forKey:@"truncatedPlaceName"];
         
-        if ([myParentIS isEqualToString:@"From Address"])
-            [Common truncatedPlaceNameAddress:placeDict];
-        else
-            [Common setToAddress:placeDict];
+//        if ([myParentIS isEqualToString:@"From Address"])
+//            [Common truncatedPlaceNameAddress:placeDict];
+//        else
+//            [Common setToAddress:placeDict];
     }
 
     
@@ -298,13 +299,50 @@ static sqlite3 *database = nil;
     [placeDict setObject:places.truncatedPlaceName forKey:@"truncatedPlaceName"];
 
     }
-    if ([myParentIS isEqualToString:@"From Address"])
+    if ([myParentIS isEqualToString:@"From Address"]){
         [Common setFromAddress:placeDict];
-    else
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else{
         [Common setToAddress:placeDict];
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+        SearchViewController *searchViewController;
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+        {
+            CGSize result = [[UIScreen mainScreen] bounds].size;
+            if(result.height == 480)
+            {
+                searchViewController= [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
+            }
+            if(result.height == 568)
+            {
+                searchViewController= [[SearchViewController alloc] initWithNibName:@"SearchViewController@iPhone5" bundle:nil];
+            }
+        }
+        UINavigationController *citySearchNavController=[[[UINavigationController alloc] initWithRootViewController:searchViewController] autorelease];
+        float rd = 4.00/255.00;
+        float gr = 152.00/255.00;
+        float bl = 229.00/255.00;
+        citySearchNavController.navigationBar.barTintColor =[UIColor colorWithRed:rd green:gr blue:bl alpha:1.0];
+        [citySearchNavController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        citySearchNavController.navigationBar.tintColor = [UIColor whiteColor];
 
+        citySearchNavController.tabBarItem.image = [UIImage imageNamed:@"city.png"];
 
-   [self.navigationController popToRootViewControllerAnimated:YES];
+        WiseCabsAppDelegate* myDelegate = (((WiseCabsAppDelegate*) [UIApplication sharedApplication].delegate));
+        NSArray *viewControllers = [myDelegate.maintabBarController viewControllers];
+        NSMutableArray *updatedArray = [NSMutableArray arrayWithArray:viewControllers];
+        
+        [updatedArray removeObjectAtIndex:0];
+        [updatedArray insertObject:citySearchNavController atIndex:0];
+        
+        [myDelegate.maintabBarController setViewControllers:(NSArray *)updatedArray];
+    }
+
+    if ([self.delegate respondsToSelector:@selector(dismissSearchBarController)]) {
+        [self.delegate dismissSearchBarController];
+    }
+
  
 }
 

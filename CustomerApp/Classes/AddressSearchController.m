@@ -9,7 +9,6 @@
 #import "AddressSearchController.h"
 #import "OLGhostAlertView.h"
 #import "ALToastView.h"
-#import "SearchBarController.h"
 #import "UserJourney.h"
 #import "Journey.h"
 #import "Common.h"
@@ -22,7 +21,7 @@
 
 @implementation AddressSearchController
 
-@synthesize textKeyDetails,textCategoryType,myParentIS,/*CategoryPicker,*/categoryArray,selectedLocationID,selectedLocationName,selectedcategoryName;
+@synthesize textKeyDetails,textCategoryType,myParentIS,/*CategoryPicker,*/categoryArray,selectedLocationID,selectedLocationName,selectedcategoryName,delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,6 +94,7 @@
     textCategoryType.text = @"City";
     textKeyDetails.placeholder=@"Search..";
     textCategoryType.enabled = NO;
+    
 
     
 //    self.CategoryPicker=[[UIPickerView alloc] initWithFrame:CGRectMake(0,100,320, 500)];
@@ -136,6 +136,12 @@
         self.navigationItem.rightBarButtonItem=nil;
         SearchBarController *searchController=[[SearchBarController alloc]init];
             searchController.myParentIS=self.myParentIS;
+        if ([myParentIS isEqualToString:@"From Address"]) {
+            searchController.delegate = self;
+        }
+        else{
+            searchController.delegate = self.delegate;
+        }
             searchController.placeType=[NSString stringWithFormat:@"%@",textCategoryType.text];
             [ self.navigationController pushViewController:searchController animated:NO];
             self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
@@ -240,7 +246,12 @@
 
 
 
-
+- (void)dismissSearchBarController{
+    NSLog(@"CAll Back - SBC");
+    if ([myParentIS isEqualToString:@"From Address"]) {
+        self.myParentIS=@"To Address";
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

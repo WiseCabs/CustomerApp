@@ -9,11 +9,14 @@
 #import "WCHomeMapViewController.h"
 #import "Common.h"
 #import "MyAnnotation.h"
+#import "AddressSearchController.h"
+#import "SearchViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
 @interface WCHomeMapViewController ()
 
+@property(nonatomic,strong) SearchViewController *searchViewController;
 @end
 
 @implementation WCHomeMapViewController
@@ -23,6 +26,14 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title=@"Home";
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
+    
     
     if([Common isNetworkExist]>0){
         [self.homeMapView setMapType:MKMapTypeStandard];
@@ -34,6 +45,8 @@
     else {
         [Common showNetwokAlert];
     }
+    
+    _searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchViewController" bundle:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +63,9 @@
     // add the annotation
     MyAnnotation *myPin = [[MyAnnotation alloc] initWithCoordinate:userLocation.coordinate];
     [self.homeMapView addAnnotation:myPin];
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
+    [self.searchViewController locationUpdate:location];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState
@@ -59,6 +75,9 @@
     {
         CLLocationCoordinate2D droppedAt = annotationView.annotation.coordinate;
         NSLog(@"Pin dropped at %f,%f", droppedAt.latitude, droppedAt.longitude);
+        
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:droppedAt.latitude longitude:droppedAt.longitude];
+        [self.searchViewController locationUpdate:location];
     }
 }
 
@@ -91,9 +110,24 @@
 }
 
 - (IBAction)pickUpLocation:(id)sender {
+    AddressSearchController *addressController=[[AddressSearchController alloc] init];
+    addressController.myParentIS=@"From Address";
+    addressController.delegate = self;
+    [self.navigationController pushViewController:addressController animated:YES];
+    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
 }
 
 - (IBAction)destination:(id)sender {
+    AddressSearchController *addressController=[[AddressSearchController alloc] init];
+    addressController.myParentIS=@"To Address";
+    addressController.delegate = self;
+    [self.navigationController pushViewController:addressController animated:YES];
+    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
+}
+
+- (void)dismissSearchBarController{
+    NSLog(@"CAll Back - ASC");
+    [self.navigationController pushViewController:self.searchViewController animated:YES];
 }
 
 /*

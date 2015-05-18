@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 #import <MapKit/MapKit.h>
+#import "SearchBarController.h"
 
 
-@interface WCHomeMapViewController : MainViewController <MKMapViewDelegate>
+@interface WCHomeMapViewController : MainViewController <MKMapViewDelegate,WCSearchBarControllerDelegate,CLLocationManagerDelegate>
 
 @property (retain, nonatomic) IBOutlet MKMapView *homeMapView;
+@property(nonatomic, retain) CLLocationManager *locationManager;
+
 
 - (IBAction)pickUpLocation:(id)sender;
 - (IBAction)destination:(id)sender;

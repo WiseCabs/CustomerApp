@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchBarController.h"
 
-@interface AddressSearchController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@interface AddressSearchController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate,WCSearchBarControllerDelegate >
 {
     IBOutlet UITextField *textCategoryType;
 	IBOutlet UITextField *textKeyDetails;
@@ -31,6 +33,7 @@
 @property(nonatomic, retain) NSString *selectedLocationID;
 @property(nonatomic, retain) NSString *selectedLocationName;
 @property(nonatomic, retain) NSString *selectedcategoryName;
+@property(nonatomic, retain) id delegate;
 
 
 -(void)checkIfTablesUpdated;
