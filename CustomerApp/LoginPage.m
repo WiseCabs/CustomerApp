@@ -264,16 +264,21 @@ else //{
 	[authenticateActionPool release];
 	
 	if (isSuccess) {
-		[self performSelectorOnMainThread:@selector(pushCitysearch) withObject:nil waitUntilDone:NO];
+ 		[self performSelectorOnMainThread:@selector(pushCitysearch) withObject:nil waitUntilDone:NO];
 	}
 }
 -(void)pushCitysearch{
-	[NSThread detachNewThreadSelector:@selector(getJourneyList) toTarget:self withObject:nil];
-	 SearchViewController *citySearch=[[SearchViewController alloc] init];
-	 citySearch.CameFromLoginPage=@"Yes";
-	
-	 [self.navigationController pushViewController: citySearch animated:YES];
-	[self dismissModalViewControllerAnimated:YES];
+//	[NSThread detachNewThreadSelector:@selector(getJourneyList) toTarget:self withObject:nil];
+//	 SearchViewController *citySearch=[[SearchViewController alloc] init];
+//	 citySearch.CameFromLoginPage=@"Yes";
+//	
+//	 [self.navigationController pushViewController: citySearch animated:YES];
+//	[self dismissModalViewControllerAnimated:YES];
+    
+    WiseCabsAppDelegate *appDelegate = (WiseCabsAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.maintabBarController.tabBar.hidden=NO;
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)getJourneyList{
@@ -289,7 +294,12 @@ else //{
 	[Common setLoggedInUser:nil];
     
 	
-	[self dismissModalViewControllerAnimated:YES];
+//	[self dismissModalViewControllerAnimated:YES];
+    WiseCabsAppDelegate *appDelegate = (WiseCabsAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.maintabBarController.tabBar.hidden=NO;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 	
 }
 
