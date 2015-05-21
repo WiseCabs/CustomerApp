@@ -14,11 +14,13 @@
 #import "WiseCabsAppDelegate.h"
 #import "LoginPage.h"
 
+
 #define METERS_PER_MILE 1609.344
 
 @interface WCHomeMapViewController ()
 
 @property(nonatomic,strong) SearchViewController *searchViewController;
+
 @end
 
 @implementation WCHomeMapViewController
@@ -27,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.title=@"Home";
+    self.navigationItem.title=@"ABBA Cars";
     
 
     self.locationManager = [[CLLocationManager alloc] init];
@@ -35,8 +37,6 @@
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
-    [self.locationManager startUpdatingLocation];
-    
     
     if([Common isNetworkExist]>0){
         [self.homeMapView setMapType:MKMapTypeStandard];
@@ -51,17 +51,7 @@
     
     _searchViewController = [[SearchViewController alloc]initWithNibName:@"SearchViewController" bundle:nil];
     
-    // add the annotation
-    MyAnnotation *myPin = [[MyAnnotation alloc] initWithCoordinate:self.locationManager.location.coordinate];
-    [self.homeMapView addAnnotation:myPin];
-    
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:self.locationManager.location.coordinate.latitude longitude:self.locationManager.location.coordinate.longitude];
-    [self.searchViewController locationUpdate:location];
-    
-    // zoom to region containing the user location
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.locationManager.location.coordinate, 10*METERS_PER_MILE, 10*METERS_PER_MILE);
-    [self.homeMapView setRegion:[self.homeMapView regionThatFits:region] animated:YES];
-
+ 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -88,6 +78,9 @@
         [myViewController3 tabBarItem].enabled = FALSE;
         
     }
+    
+    [self.locationManager startUpdatingLocation];
+
     
 }
 
@@ -170,8 +163,66 @@
     
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
+    CLLocation * currentLocation = (CLLocation *)[locations lastObject];
+
+    NSLog(@"Location: %@", currentLocation);
+    if (currentLocation != nil)
+    {
+        if (!self.homeMapView.annotations.count) {
+
+        CLGeocoder *geocoder = [[[CLGeocoder alloc] init] autorelease];
+        [geocoder reverseGeocodeLocation:currentLocation
+                       completionHandler:^(NSArray *placemarks, NSError *error) {
+                           NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+                           
+                           if (error){
+                               NSLog(@"Geocode failed with error: %@", error);
+                               return;
+                               
+                           }
+                           
+                           if(placemarks && placemarks.count > 0)
+                               
+                           {
+                               //do something
+                               CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                               MyAnnotation *myPin;
+                               myPin = [[MyAnnotation alloc] initWithCoordinate:currentLocation.coordinate];
+                               myPin.title = [NSString stringWithFormat:@"%@, %@, %@",[topResult subLocality],[topResult locality], [topResult postalCode]];
+                               self.homeMapView.userLocation.title = [NSString stringWithFormat:@"%@, %@, %@",[topResult subLocality],[topResult locality], [topResult postalCode]];
+                               [self.homeMapView addAnnotation:myPin];
+                               
+                           }
+        }];
+
+            
+        }
+        
+
+
+        [self.locationManager stopUpdatingLocation];
+
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+
+
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+//    userLocation.title = self.currentLocation;
+    
+    // zoom to region containing the user location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5*METERS_PER_MILE, 5*METERS_PER_MILE);
+    [self.homeMapView setRegion:[self.homeMapView regionThatFits:region] animated:YES];
+    
+
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState
@@ -183,30 +234,68 @@
         NSLog(@"Pin dropped at %f,%f", droppedAt.latitude, droppedAt.longitude);
         
         CLLocation *location = [[CLLocation alloc] initWithLatitude:droppedAt.latitude longitude:droppedAt.longitude];
-        [self.searchViewController locationUpdate:location];
+
+        CLGeocoder *geocoder = [[[CLGeocoder alloc] init] autorelease];
+        [geocoder reverseGeocodeLocation:location
+                       completionHandler:^(NSArray *placemarks, NSError *error)
+        {
+            
+            NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+
+            if (error){
+               NSLog(@"Geocode failed with error: %@", error);
+               return;
+               
+            }
+
+            if(placemarks && placemarks.count > 0)
+               
+            {
+               //do something
+                CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                MyAnnotation *ann = annotationView.annotation;
+                ann.title = [NSString stringWithFormat:@"%@, %@, %@",[topResult subLocality],[topResult locality], [topResult postalCode]];
+            }
+        }];
     }
 }
 
 - (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation: (id<MKAnnotation>) annotation {
     static NSString *defaultID = @"myLocation";
 
-    if ([annotation isKindOfClass:MKUserLocation.class])
+    if ([annotation isKindOfClass:[MKUserLocation class]])
     {
-        //user location view is being requested,
-        //return nil so it uses the default which is a blue dot...
-        return nil;
+//        ((MKUserLocation *)annotation).title = (self.currentLocation !=nil) ? self.currentLocation : @"Current Location";
+        return nil;  //return nil to use default blue dot view
     }
-    MKPinAnnotationView *pin = (MKPinAnnotationView *) [self.homeMapView dequeueReusableAnnotationViewWithIdentifier: defaultID];
-    if (pin == nil) {
-        pin = [[[MKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: defaultID] autorelease];
-    } else {
-        pin.annotation = annotation;
-    }
-    pin.animatesDrop = YES;
-    pin.draggable = YES;
-    pin.selected = YES;
     
-    return pin;
+    MKAnnotationView *pinView;
+    if([annotation isKindOfClass:[MyAnnotation class]])
+    {
+        pinView = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier: defaultID];
+        
+        if (pinView == nil) {
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation: (MyAnnotation *)annotation reuseIdentifier: defaultID];
+        } else {
+            pinView.annotation = annotation;
+        }
+        //    pin.animatesDrop = YES;
+        pinView.draggable = YES;
+        pinView.selected = YES;
+        pinView.canShowCallout = YES;
+        
+    if ([Common fromAddress]!=nil) {
+        NSMutableDictionary *addressDict=[[Common fromAddress]  mutableCopy];
+        MyAnnotation *ann = annotation;
+        ann.title = [addressDict objectForKey:@"placeName"];
+    }
+        return pinView;
+
+    }
+
+
+    
+    return nil;
     
 }
 

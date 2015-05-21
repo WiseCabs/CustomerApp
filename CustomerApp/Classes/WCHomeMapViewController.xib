@@ -3,6 +3,7 @@
     <dependencies>
         <deployment version="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WCHomeMapViewController">
@@ -18,11 +19,12 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-By-xeO">
                     <rect key="frame" x="0.0" y="415" width="160" height="41"/>
+                    <color key="backgroundColor" red="0.33333333329999998" green="0.65098039220000004" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="160" id="DXI-cL-JeV"/>
                         <constraint firstAttribute="height" constant="40" id="cpK-Q2-Hlt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Another Pick-Up Location">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -32,7 +34,9 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYb-ad-9e1">
                     <rect key="frame" x="160" y="415" width="160" height="41"/>
+                    <color key="backgroundColor" red="0.33333333329999998" green="0.65098039220000004" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Enter Destination">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -46,9 +50,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ojc-By-xeO" firstAttribute="width" secondItem="pYb-ad-9e1" secondAttribute="width" id="42h-yB-kel"/>
+                <constraint firstItem="pYb-ad-9e1" firstAttribute="width" secondItem="Ojc-By-xeO" secondAttribute="width" id="0GL-ef-NtE"/>
+                <constraint firstItem="pYb-ad-9e1" firstAttribute="height" secondItem="Ojc-By-xeO" secondAttribute="height" id="75q-mD-QqL"/>
+                <constraint firstItem="Ojc-By-xeO" firstAttribute="width" secondItem="Ngc-du-oj2" secondAttribute="width" multiplier="1:2" id="8BU-0l-dQY"/>
                 <constraint firstItem="Ngc-du-oj2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8MF-vL-VCH"/>
-                <constraint firstItem="Ojc-By-xeO" firstAttribute="height" secondItem="pYb-ad-9e1" secondAttribute="height" id="KlW-yd-4iw"/>
                 <constraint firstItem="Ojc-By-xeO" firstAttribute="top" secondItem="Ngc-du-oj2" secondAttribute="bottom" id="Lsd-xt-fmz"/>
                 <constraint firstItem="pYb-ad-9e1" firstAttribute="top" secondItem="Ngc-du-oj2" secondAttribute="bottom" id="Oe3-VQ-wVT"/>
                 <constraint firstAttribute="trailing" secondItem="pYb-ad-9e1" secondAttribute="trailing" id="cy9-Ym-2Sh"/>

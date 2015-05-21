@@ -14,6 +14,9 @@
     CLLocationCoordinate2D coordinate;
     
 }
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
+
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 

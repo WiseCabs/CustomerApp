@@ -10,6 +10,8 @@
 #import "MainViewController.h"
 #import <MapKit/MapKit.h>
 #import "SearchBarController.h"
+#import <CoreLocation/CoreLocation.h>
+
 
 
 @interface WCHomeMapViewController : MainViewController <MKMapViewDelegate,WCSearchBarControllerDelegate,CLLocationManagerDelegate>
@@ -21,4 +23,7 @@
 - (IBAction)pickUpLocation:(id)sender;
 - (IBAction)destination:(id)sender;
 
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation;
 @end
