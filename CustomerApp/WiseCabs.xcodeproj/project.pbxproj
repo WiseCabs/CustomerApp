@@ -150,6 +150,8 @@
 		E552AC581B08D801004A051D /* WCHomeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E552AC561B08D801004A051D /* WCHomeMapViewController.xib */; };
 		E552AC641B092A81004A051D /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E552AC631B092A81004A051D /* MyAnnotation.m */; };
 		E58804A91B025B6B00C02270 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58804A81B025B6B00C02270 /* MainViewController.m */; };
+		E5E4F31F1B10FD230094D66B /* WCSearchBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E4F31D1B10FD230094D66B /* WCSearchBarTableViewController.m */; };
+		E5E4F3201B10FD230094D66B /* WCSearchBarTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E4F31E1B10FD230094D66B /* WCSearchBarTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -358,6 +360,9 @@
 		E552AC631B092A81004A051D /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		E58804A71B025B6B00C02270 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E58804A81B025B6B00C02270 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E5E4F31C1B10FD230094D66B /* WCSearchBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSearchBarTableViewController.h; sourceTree = "<group>"; };
+		E5E4F31D1B10FD230094D66B /* WCSearchBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSearchBarTableViewController.m; sourceTree = "<group>"; };
+		E5E4F31E1B10FD230094D66B /* WCSearchBarTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCSearchBarTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +431,9 @@
 				6D4971A51755D8F700746C80 /* FavoriteJourneys.m */,
 				6D4971A9175606F100746C80 /* LocationTracker.h */,
 				6D4971AA175606F100746C80 /* LocationTracker.m */,
+				E5E4F31C1B10FD230094D66B /* WCSearchBarTableViewController.h */,
+				E5E4F31D1B10FD230094D66B /* WCSearchBarTableViewController.m */,
+				E5E4F31E1B10FD230094D66B /* WCSearchBarTableViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -811,6 +819,7 @@
 				6D899062174649D400C051F4 /* Icon@2x.png in Resources */,
 				6D899063174649D400C051F4 /* Icon.png in Resources */,
 				6D4A7073174665220025123F /* Entitlements.plist in Resources */,
+				E5E4F3201B10FD230094D66B /* WCSearchBarTableViewController.xib in Resources */,
 				6D4971A81755D8F700746C80 /* FavoriteJourneys.xib in Resources */,
 				6D4971AD175606F100746C80 /* LocationTracker.xib in Resources */,
 				6DFE79D4175899E400E4B2EC /* caricon.png in Resources */,
@@ -843,6 +852,7 @@
 				6DAD60C7148F4856002BB908 /* SBJsonParser.m in Sources */,
 				6DAD60C8148F4856002BB908 /* SBJsonWriter.m in Sources */,
 				6DE0A861148FD1690005D2B0 /* CoPassengerTableViewCell.m in Sources */,
+				E5E4F31F1B10FD230094D66B /* WCSearchBarTableViewController.m in Sources */,
 				6DE0A889148FD6D30005D2B0 /* OldJourneyTableViewCell.m in Sources */,
 				6D1D195D1490C20100647DE7 /* Reachability.m in Sources */,
 				6D8F11F61491D84100BF4325 /* SQLHelper.m in Sources */,

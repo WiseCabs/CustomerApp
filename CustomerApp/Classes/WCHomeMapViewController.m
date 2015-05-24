@@ -13,6 +13,7 @@
 #import "SearchViewController.h"
 #import "WiseCabsAppDelegate.h"
 #import "LoginPage.h"
+#import "WCSearchBarTableViewController.h"
 
 
 #define METERS_PER_MILE 1609.344
@@ -305,18 +306,30 @@
 }
 
 - (IBAction)pickUpLocation:(id)sender {
-    AddressSearchController *addressController=[[AddressSearchController alloc] init];
-    addressController.myParentIS=@"From Address";
-    addressController.delegate = self;
-    [self.navigationController pushViewController:addressController animated:YES];
+//    AddressSearchController *addressController=[[AddressSearchController alloc] init];
+//    addressController.myParentIS=@"From Address";
+//    addressController.delegate = self;
+//    [self.navigationController pushViewController:addressController animated:YES];
+//    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
+    
+    WCSearchBarTableViewController *wcSearchBarTableViewController = [[WCSearchBarTableViewController alloc]initWithNibName:@"WCSearchBarTableViewController" bundle:nil];
+    wcSearchBarTableViewController.myParentIS = @"From Address";
+    [self.navigationController pushViewController:wcSearchBarTableViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
+
 }
 
 - (IBAction)destination:(id)sender {
-    AddressSearchController *addressController=[[AddressSearchController alloc] init];
-    addressController.myParentIS=@"To Address";
-    addressController.delegate = self;
-    [self.navigationController pushViewController:addressController animated:YES];
+//    AddressSearchController *addressController=[[AddressSearchController alloc] init];
+//    addressController.myParentIS=@"To Address";
+//    addressController.delegate = self;
+//    [self.navigationController pushViewController:addressController animated:YES];
+//    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
+    
+    
+    WCSearchBarTableViewController *wcSearchBarTableViewController = [[WCSearchBarTableViewController alloc]initWithNibName:@"WCSearchBarTableViewController" bundle:nil];
+    wcSearchBarTableViewController.myParentIS = @"To Address";
+    [self.navigationController pushViewController:wcSearchBarTableViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
 }
 

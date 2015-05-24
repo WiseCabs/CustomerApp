@@ -103,9 +103,9 @@
 //    //[CategoryPicker selectRow:0 inComponent:0 animated:YES];
 //	CategoryPicker.showsSelectionIndicator = YES;
     
-    NSArray *tempArray=[[NSArray alloc] initWithObjects:@"City",@"Airport",@"Tube",@"Train",nil ];
-	self.categoryArray = [NSMutableArray arrayWithArray:tempArray];
-    [tempArray release];
+//    NSArray *tempArray=[[NSArray alloc] initWithObjects:@"City",@"Airport",@"Tube",@"Train",nil ];
+//	self.categoryArray = [NSMutableArray arrayWithArray:tempArray];
+//    [tempArray release];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -147,20 +147,20 @@
             self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
                
     }
-    else if([self.textCategoryType isFirstResponder]){
-        
-        if ([self.textCategoryType.text isEqualToString:@""] && [categoryArray count]>0) {
-            
-            NSString *categoryName=[categoryArray objectAtIndex:0];
-            self.textCategoryType.text=categoryName;           
-            self.textKeyDetails.enabled=YES;
-            textKeyDetails.placeholder=@"Search..";
-        }
-        
-        self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)  ] autorelease];
-        
-        self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelEdit:)] autorelease];
-    }
+//    else if([self.textCategoryType isFirstResponder]){
+//        
+//        if ([self.textCategoryType.text isEqualToString:@""] && [categoryArray count]>0) {
+//            
+//            NSString *categoryName=[categoryArray objectAtIndex:0];
+//            self.textCategoryType.text=categoryName;           
+//            self.textKeyDetails.enabled=YES;
+//            textKeyDetails.placeholder=@"Search..";
+//        }
+//        
+//        self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard:)  ] autorelease];
+//        
+//        self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelEdit:)] autorelease];
+//    }
     
 }
 

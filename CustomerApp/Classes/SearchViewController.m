@@ -133,7 +133,7 @@
 	//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
 	
 	appDelegate.maintabBarController.tabBar.hidden=NO;
-	self.navigationItem.hidesBackButton = YES;
+	self.navigationItem.hidesBackButton = NO;
    
 	
 	
@@ -181,7 +181,7 @@
     self.navigationItem.title=@"ABBA CARS";
     WiseCabsAppDelegate *appDelegate = (WiseCabsAppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.maintabBarController.tabBar.hidden=NO;
-	self.navigationItem.hidesBackButton = YES;
+	self.navigationItem.hidesBackButton = NO;
     
 	//WiseCabsAppDelegate *appDelegate = (WiseCabsAppDelegate *)[[UIApplication sharedApplication] delegate];
 	if ([self.CameFromLoginPage isEqualToString:@"Yes"] || [self.CameFromLoginPage isEqualToString:@"Yes1"] )

@@ -151,12 +151,12 @@ static sqlite3 *database = nil;
     
 }
 
-- (IBAction) currentLocationSelected:(id)sender
-{
-    NSString *fromAddress=nil;
-    [Common setFromAddress:fromAddress];
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+//- (IBAction) currentLocationSelected:(id)sender
+//{
+//    NSString *fromAddress=nil;
+//    [Common setFromAddress:fromAddress];
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -236,11 +236,11 @@ static sqlite3 *database = nil;
        // NSLog(@"addressName--- %@",addressName);
         cell.textLabel.text=[NSString stringWithFormat:@"%@",addressName];
     }
-    else{
-    Places *places = (self.searchTableView==tableView)?[self.placesArray objectAtIndex:indexPath.row] : [self.filteredListContent objectAtIndex:indexPath.row];
-    cell.textLabel.text=[NSString stringWithFormat:@"%@",places.placeName];
-    cell.detailTextLabel.text=[NSString stringWithFormat:@"%@",places.placeId];
-    }
+//    else{
+//    Places *places = (self.searchTableView==tableView)?[self.placesArray objectAtIndex:indexPath.row] : [self.filteredListContent objectAtIndex:indexPath.row];
+//    cell.textLabel.text=[NSString stringWithFormat:@"%@",places.placeName];
+//    cell.detailTextLabel.text=[NSString stringWithFormat:@"%@",places.placeId];
+//    }
 
     return cell;
 }
@@ -287,18 +287,18 @@ static sqlite3 *database = nil;
     }
 
     
-    else
-    {
-    Places *places = (self.searchTableView==tableView)?[self.placesArray objectAtIndex:indexPath.row] : [self.filteredListContent objectAtIndex:indexPath.row];
-   // 
-    
-    [placeDict setObject:places.placeId forKey:@"placeId"];
-    [placeDict setObject:places.placeName forKey:@"placeName"];
-    [placeDict setObject:places.postCode forKey:@"postCode"];
-    [placeDict setObject: [self.placeType  lowercaseString] forKey:@"placeType"];
-    [placeDict setObject:places.truncatedPlaceName forKey:@"truncatedPlaceName"];
-
-    }
+//    else
+//    {
+//    Places *places = (self.searchTableView==tableView)?[self.placesArray objectAtIndex:indexPath.row] : [self.filteredListContent objectAtIndex:indexPath.row];
+//   // 
+//    
+//    [placeDict setObject:places.placeId forKey:@"placeId"];
+//    [placeDict setObject:places.placeName forKey:@"placeName"];
+//    [placeDict setObject:places.postCode forKey:@"postCode"];
+//    [placeDict setObject: [self.placeType  lowercaseString] forKey:@"placeType"];
+//    [placeDict setObject:places.truncatedPlaceName forKey:@"truncatedPlaceName"];
+//
+//    }
     if ([myParentIS isEqualToString:@"From Address"]){
         [Common setFromAddress:placeDict];
         [self.navigationController popViewControllerAnimated:YES];
@@ -356,24 +356,24 @@ static sqlite3 *database = nil;
 }
 
 
-- (void)filterCityForSearchText:(NSString*)str{
-    // for inCaseSensitive search
-    str = [str uppercaseString];
-    NSMutableArray *tempArray=[self.filteredListContent mutableCopy];
-    NSLog(@"tempArray count is %lu",(unsigned long)[tempArray count]);      //64 bit changes
-    [self.filteredListContent removeAllObjects];
-	//arForSearch=[[NSMutableArray alloc] init];
-	for (NSString *tempString in tempArray)
-	{
-        NSComparisonResult result = [tempString compare:str options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [str length])];
-        if (result == NSOrderedSame)
-        {
-            [self.filteredListContent addObject:tempString];
-        }
-		
-    }
-    NSLog(@"filteredListContent count is %lu",(unsigned long)[filteredListContent count]);      //64 bit changes
-}
+//- (void)filterCityForSearchText:(NSString*)str{
+//    // for inCaseSensitive search
+//    str = [str uppercaseString];
+//    NSMutableArray *tempArray=[self.filteredListContent mutableCopy];
+//    NSLog(@"tempArray count is %lu",(unsigned long)[tempArray count]);      //64 bit changes
+//    [self.filteredListContent removeAllObjects];
+//	//arForSearch=[[NSMutableArray alloc] init];
+//	for (NSString *tempString in tempArray)
+//	{
+//        NSComparisonResult result = [tempString compare:str options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [str length])];
+//        if (result == NSOrderedSame)
+//        {
+//            [self.filteredListContent addObject:tempString];
+//        }
+//		
+//    }
+//    NSLog(@"filteredListContent count is %lu",(unsigned long)[filteredListContent count]);      //64 bit changes
+//}
 
 
 
