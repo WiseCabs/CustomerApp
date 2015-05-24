@@ -89,6 +89,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   
+    _placeDict=[[NSMutableDictionary alloc] init];
+    if ([self.placeType isEqualToString:@"City"])
+    {
+        NSMutableString *addressName= [self.filteredListContent objectAtIndex:indexPath.row];
+        NSLog(@"selected address--- %@",addressName);
+        
+        [addressName replaceOccurrencesOfString:@"-" withString:@" " options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
+        [addressName replaceOccurrencesOfString:@"\r" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
+        
+        NSArray *splitArray = [addressName componentsSeparatedByString:@","];
+        NSString *placeName=@"";
+        for (int i=1; i<= [splitArray count]-1; i++) {
+            
+            placeName=[NSString stringWithFormat:@"%@,%@",placeName,[splitArray objectAtIndex:i]];
+            NSLog(@"placeName address--- %@",placeName);
+        }
+        placeName = [placeName substringFromIndex:2];
+        
+        NSString *postCode=[splitArray objectAtIndex:0];
+        
+        [self.placeDict setObject:@"0" forKey:@"placeId"];
+        [self.placeDict setObject:placeName forKey:@"placeName"];
+        [self.placeDict setObject:postCode forKey:@"postCode"];
+        [self.placeDict setObject: @"city" forKey:@"placeType"];
+        [self.placeDict setObject:placeName forKey:@"truncatedPlaceName"];
+        
+        if ([self.myParentIS isEqualToString:@"From Address"]){
+            [Common setFromAddress:self.placeDict];
+        }
+        else{
+            [Common setToAddress:self.placeDict];
+        }
+        
+    }
+
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
         self.selectedIndexPath = indexPath;
@@ -96,32 +131,6 @@
         [self.searchDisplayController setActive:NO];
     }
     else{
-        _placeDict=[[NSMutableDictionary alloc] init];
-        if ([self.placeType isEqualToString:@"City"])
-        {
-            NSMutableString *addressName= [self.filteredListContent objectAtIndex:indexPath.row];
-            NSLog(@"selected address--- %@",addressName);
-            
-            [addressName replaceOccurrencesOfString:@"-" withString:@" " options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
-            [addressName replaceOccurrencesOfString:@"\r" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
-            
-            NSArray *splitArray = [addressName componentsSeparatedByString:@","];
-            NSString *placeName=@"";
-            for (int i=1; i<= [splitArray count]-1; i++) {
-                
-                placeName=[NSString stringWithFormat:@"%@,%@",placeName,[splitArray objectAtIndex:i]];
-                NSLog(@"placeName address--- %@",placeName);
-            }
-            placeName = [placeName substringFromIndex:2];
-            
-            NSString *postCode=[splitArray objectAtIndex:0];
-            
-            [self.placeDict setObject:@"0" forKey:@"placeId"];
-            [self.placeDict setObject:placeName forKey:@"placeName"];
-            [self.placeDict setObject:postCode forKey:@"postCode"];
-            [self.placeDict setObject: @"city" forKey:@"placeType"];
-            [self.placeDict setObject:placeName forKey:@"truncatedPlaceName"];
-        }
         
     }
     
@@ -234,14 +243,12 @@
 }
 - (IBAction)clickDone:(id)sender {
     if ([self.myParentIS isEqualToString:@"From Address"]){
-        [Common setFromAddress:self.placeDict];
         WCSearchBarTableViewController *wcSearchBarTableViewController = [[WCSearchBarTableViewController alloc]initWithNibName:@"WCSearchBarTableViewController" bundle:nil];
         wcSearchBarTableViewController.myParentIS = @"To Address";
         self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
         [self.navigationController pushViewController:wcSearchBarTableViewController animated:YES];
     }
     else{
-        [Common setToAddress:self.placeDict];
         SearchViewController *searchViewController;
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
         {
