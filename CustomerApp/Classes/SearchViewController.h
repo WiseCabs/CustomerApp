@@ -15,8 +15,8 @@
 {
     CoreLocation *locationController;
    
-    IBOutlet UITextField *textFromAddress;
-	IBOutlet UITextField *textToAddress;
+    IBOutlet UILabel *textFromAddress;
+	IBOutlet UILabel *textToAddress;
     IBOutlet UIButton *buttonSearch;
     IBOutlet UIButton *buttonBagsPlus;
     IBOutlet UIButton *buttonBagsMinus;
@@ -63,8 +63,8 @@
 @property(nonatomic, retain) NSString *userpostCode;
 @property(nonatomic, retain) NSString *userAddress;
 
-@property(nonatomic, retain) IBOutlet UITextField *textFromAddress;
-@property(nonatomic, retain) IBOutlet UITextField *textToAddress;
+@property(nonatomic, retain) IBOutlet UILabel *textFromAddress;
+@property(nonatomic, retain) IBOutlet UILabel *textToAddress;
 @property(nonatomic, retain) IBOutlet UIButton *buttonSearch;
 @property(nonatomic, retain) IBOutlet UIButton *buttonBagsPlus;
 @property(nonatomic, retain) IBOutlet UIButton *buttonBagsMinus;

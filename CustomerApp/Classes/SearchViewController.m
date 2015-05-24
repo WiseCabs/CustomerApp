@@ -153,8 +153,8 @@
         }
         if(result.height == 568)
         {
-            self.textFromAddress.frame = CGRectMake(62, 21, 202, 38);
-            self.textToAddress.frame = CGRectMake(62, 90, 202, 38);
+//            self.textFromAddress.frame = CGRectMake(62, 21, 202, 38);
+//            self.textToAddress.frame = CGRectMake(62, 90, 202, 38);
             self.segControlTime.frame = CGRectMake(10, 158, 300, 38);
         }
     }
@@ -174,8 +174,8 @@
     self.labelVehicleType.userInteractionEnabled = YES;
     [self.labelVehicleType addGestureRecognizer:tap];
         
-    [textFromAddress addTarget:self action:@selector(textFieldBecameActive:) forControlEvents:UIControlEventEditingDidBegin];
-    [textToAddress addTarget:self action:@selector(textFieldBecameActive:) forControlEvents:UIControlEventEditingDidBegin];
+//    [textFromAddress addTarget:self action:@selector(textFieldBecameActive:) forControlEvents:UIControlEventEditingDidBegin];
+//    [textToAddress addTarget:self action:@selector(textFieldBecameActive:) forControlEvents:UIControlEventEditingDidBegin];
     
     self.title=@"Quote and Book";
     self.navigationItem.title=@"ABBA CARS";
@@ -395,7 +395,7 @@
         }
         NSLog(@"userAddress--%@",self.userAddress);
         self.userAddress = [NSString stringWithFormat:@"%@, %@",self.userAddress,self.userpostCode];
-        textFromAddress.text=[NSString stringWithFormat:@"%@",self.userAddress];
+        self.textFromAddress.text=[NSString stringWithFormat:@"%@",self.userAddress];
          NSLog(@"userAddress--%@",self.userAddress);
         NSLog(@"userpostCode--%@",self.userpostCode);
        
@@ -416,7 +416,7 @@
     [placeDict setObject: @"city" forKey:@"placeType"];
     [placeDict setObject:self.userAddress forKey:@"truncatedPlaceName"];
     [Common setFromAddress:placeDict];
-    textFromAddress.text=[NSString stringWithFormat:@"%@, %@",self.userAddress,self.userpostCode];
+    self.textFromAddress.text=[NSString stringWithFormat:@"%@, %@",self.userAddress,self.userpostCode];
     
 }
 
@@ -614,22 +614,22 @@
 }
 
 
-- (IBAction)textFieldBecameActive:(id)sender{
-    AddressSearchController *addressController=[[AddressSearchController alloc] init];
-    
-    if (self.textFromAddress.isFirstResponder) {
-        // [self.textFromAddress resignFirstResponder];
-        addressController.myParentIS=@"From Address";
-    }
-    else{
-        // [self.textToAddress resignFirstResponder];
-        addressController.myParentIS=@"To Address";
-    }
-    
-    [self.navigationController pushViewController:addressController animated:YES];
-    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
-   // [addressController release];
-}
+//- (IBAction)textFieldBecameActive:(id)sender{
+//    AddressSearchController *addressController=[[AddressSearchController alloc] init];
+//    
+//    if (self.textFromAddress.isFirstResponder) {
+//        // [self.textFromAddress resignFirstResponder];
+//        addressController.myParentIS=@"From Address";
+//    }
+//    else{
+//        // [self.textToAddress resignFirstResponder];
+//        addressController.myParentIS=@"To Address";
+//    }
+//    
+//    [self.navigationController pushViewController:addressController animated:YES];
+//    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil] autorelease];
+//   // [addressController release];
+//}
 
 
 
@@ -799,12 +799,12 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-    if (self.textFromAddress.isFirstResponder) {
-        [self.textFromAddress resignFirstResponder];
-    }
-    else{
-        [self.textToAddress resignFirstResponder];
-    }
+//    if (self.textFromAddress.isFirstResponder) {
+//        [self.textFromAddress resignFirstResponder];
+//    }
+//    else{
+//        [self.textToAddress resignFirstResponder];
+//    }
     [locationController.locationManager stopUpdatingLocation];
 }
 

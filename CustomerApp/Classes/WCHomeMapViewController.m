@@ -215,12 +215,20 @@
 
 }
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
+//    for (id<MKAnnotation> currentAnnotation in mapView.annotations) {
+//            [mapView selectAnnotation:currentAnnotation animated:YES];
+//    }
+    [mapView selectAnnotation:[[mapView annotations] firstObject] animated:YES];
+
+}
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
 //    userLocation.title = self.currentLocation;
     
     // zoom to region containing the user location
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5*METERS_PER_MILE, 5*METERS_PER_MILE);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
     [self.homeMapView setRegion:[self.homeMapView regionThatFits:region] animated:YES];
     
 
