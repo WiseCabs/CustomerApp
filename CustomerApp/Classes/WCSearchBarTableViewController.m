@@ -69,9 +69,8 @@
     // Configure the cell...
 
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *  cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    UITableViewCell *  cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]autorelease];
 
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
@@ -107,11 +106,11 @@
     _placeDict=[[NSMutableDictionary alloc] init];
     if ([self.placeType isEqualToString:@"City"])
     {
-        NSMutableString *addressName= [self.filteredListContent objectAtIndex:indexPath.row];
+        NSMutableString *addressName= [[self.filteredListContent objectAtIndex:indexPath.row]mutableCopy];
         NSLog(@"selected address--- %@",addressName);
         
         [addressName replaceOccurrencesOfString:@"-" withString:@" " options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
-        [addressName replaceOccurrencesOfString:@"\r" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
+        [addressName replaceOccurrencesOfString:@"\n" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [addressName length])];
         
         NSArray *splitArray = [addressName componentsSeparatedByString:@","];
         NSString *placeName=@"";

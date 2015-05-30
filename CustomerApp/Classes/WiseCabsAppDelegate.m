@@ -27,11 +27,11 @@ static sqlite3 *database = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	NSLog(@"inside appdidfinishlaunching") ;
-	[Common setWebServiceURL:@"http://www.wisecabs.com/"];
+//	[Common setWebServiceURL:@"http://www.wisecabs.com/"];
 	//[Common setWebServiceURL:@"http://192.168.0.8:8081/WiseCabs/"];
 	//[Common setWebServiceURL:@"http://localhost/wisecab/"];
 	//[Common setWebServiceURL:@"http://192.168.0.19:8080/wisecabs/"];
-    //[Common setWebServiceURL:@"http://test.wisecabs.com/"];
+    [Common setWebServiceURL:@"http://test.wisecabs.com/"];
 	[self copyDatabaseIfNeeded];
 	[NSThread detachNewThreadSelector:@selector(updateTable) toTarget:self withObject:nil];
 	[self loadTabBarController];

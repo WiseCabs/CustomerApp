@@ -21,6 +21,8 @@
 @interface WCHomeMapViewController ()
 
 @property(nonatomic,strong) SearchViewController *searchViewController;
+@property(nonatomic,assign) BOOL isAnnotationAdded;
+@property(nonatomic,strong) CLLocation *myCurrentLocation;
 
 @end
 
@@ -31,7 +33,9 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title=@"ABBA Cars";
+    self.myCurrentLocation = nil;
     
+    self.isAnnotationAdded = NO;
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -169,9 +173,10 @@
     CLLocation * currentLocation = (CLLocation *)[locations lastObject];
 
     NSLog(@"Location: %@", currentLocation);
-    if (currentLocation != nil)
+    if (self.myCurrentLocation != nil)
     {
-        if (!self.homeMapView.annotations.count) {
+        NSLog(@"Annotation count - %ld", self.homeMapView.annotations.count);
+        if (!self.isAnnotationAdded) {
 
         CLGeocoder *geocoder = [[[CLGeocoder alloc] init] autorelease];
         [geocoder reverseGeocodeLocation:currentLocation
@@ -184,18 +189,30 @@
                                
                            }
                            
-                           if(placemarks && placemarks.count > 0)
+                           if(placemarks && (placemarks.count > 0) && (!self.isAnnotationAdded))
                                
                            {
+                               self.isAnnotationAdded = YES;
+
+                               MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+                               [self.homeMapView setRegion:[self.homeMapView regionThatFits:region] animated:YES];
+
                                //do something
                                CLPlacemark *topResult = [placemarks objectAtIndex:0];
                                MyAnnotation *myPin;
                                myPin = [[MyAnnotation alloc] initWithCoordinate:currentLocation.coordinate];
-                               myPin.title = [NSString stringWithFormat:@"%@, %@, %@",[topResult subLocality],[topResult locality], [topResult postalCode]];
-                               self.homeMapView.userLocation.title = [NSString stringWithFormat:@"%@, %@, %@",[topResult subLocality],[topResult locality], [topResult postalCode]];
+                               myPin.title = [NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]];
+                               self.homeMapView.userLocation.title = [NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]];
+                               
+                               NSMutableDictionary *placeDict=[[NSMutableDictionary alloc] init];
+                               [placeDict setObject:[NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]] forKey:@"placeName"];
+                               [Common setFromAddress:placeDict];
+                               
                                [self.homeMapView addAnnotation:myPin];
                                
                            }
+                           
+                           [self.locationManager stopUpdatingLocation];
         }];
 
             
@@ -203,7 +220,7 @@
         
 
 
-        [self.locationManager stopUpdatingLocation];
+        
 
     }
 }
@@ -216,10 +233,13 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
-//    for (id<MKAnnotation> currentAnnotation in mapView.annotations) {
-//            [mapView selectAnnotation:currentAnnotation animated:YES];
-//    }
-    [mapView selectAnnotation:[[mapView annotations] firstObject] animated:YES];
+    for (id<MKAnnotation> currentAnnotation in mapView.annotations) {
+        if (![currentAnnotation isKindOfClass:[MKUserLocation class]])
+            [mapView selectAnnotation:currentAnnotation animated:YES];
+    }
+
+
+//    [mapView selectAnnotation:[[mapView annotations] firstObject] animated:YES];
 
 }
 
@@ -228,10 +248,7 @@
 //    userLocation.title = self.currentLocation;
     
     // zoom to region containing the user location
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
-    [self.homeMapView setRegion:[self.homeMapView regionThatFits:region] animated:YES];
     
-
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState
@@ -263,7 +280,7 @@
                //do something
                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
                 MyAnnotation *ann = annotationView.annotation;
-                ann.title = [NSString stringWithFormat:@"%@, %@, %@",[topResult subLocality],[topResult locality], [topResult postalCode]];
+                ann.title = [NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]];
             }
         }];
     }
@@ -275,6 +292,7 @@
     if ([annotation isKindOfClass:[MKUserLocation class]])
     {
 //        ((MKUserLocation *)annotation).title = (self.currentLocation !=nil) ? self.currentLocation : @"Current Location";
+        self.myCurrentLocation = mapView.userLocation.location;
         return nil;  //return nil to use default blue dot view
     }
     
@@ -293,11 +311,6 @@
         pinView.selected = YES;
         pinView.canShowCallout = YES;
         
-    if ([Common fromAddress]!=nil) {
-        NSMutableDictionary *addressDict=[[Common fromAddress]  mutableCopy];
-        MyAnnotation *ann = annotation;
-        ann.title = [addressDict objectForKey:@"placeName"];
-    }
         return pinView;
 
     }
