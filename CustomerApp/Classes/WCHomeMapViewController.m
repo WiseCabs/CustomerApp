@@ -47,7 +47,7 @@
         [self.homeMapView setMapType:MKMapTypeStandard];
         [self.homeMapView setZoomEnabled:YES];
         [self.homeMapView setScrollEnabled:YES];
-        
+        [self.homeMapView setShowsUserLocation:YES];
         [self.homeMapView setDelegate:self];
     }
     else {
@@ -173,6 +173,8 @@
     CLLocation * currentLocation = (CLLocation *)[locations lastObject];
 
     NSLog(@"Location: %@", currentLocation);
+    NSLog(@"User Current Location: %@", self.homeMapView.userLocation.location);
+
     if (self.myCurrentLocation != nil)
     {
         NSLog(@"Annotation count - %ld", self.homeMapView.annotations.count);
@@ -205,7 +207,12 @@
                                self.homeMapView.userLocation.title = [NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]];
                                
                                NSMutableDictionary *placeDict=[[NSMutableDictionary alloc] init];
-                               [placeDict setObject:[NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]] forKey:@"placeName"];
+                               [placeDict setObject:@"0" forKey:@"placeId"];
+                               [placeDict setObject:[NSString stringWithFormat:@"%@",[topResult thoroughfare]] forKey:@"placeName"];
+                               [placeDict setObject:[topResult postalCode] forKey:@"postCode"];
+                               [placeDict setObject: @"city" forKey:@"placeType"];
+                               [placeDict setObject:[NSString stringWithFormat:@"%@",[topResult thoroughfare]] forKey:@"truncatedPlaceName"];
+
                                [Common setFromAddress:placeDict];
                                
                                [self.homeMapView addAnnotation:myPin];
@@ -245,7 +252,7 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-//    userLocation.title = self.currentLocation;
+    self.homeMapView.centerCoordinate = mapView.userLocation.location.coordinate;
     
     // zoom to region containing the user location
     
@@ -281,6 +288,15 @@
                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
                 MyAnnotation *ann = annotationView.annotation;
                 ann.title = [NSString stringWithFormat:@"%@, %@",[topResult thoroughfare], [topResult postalCode]];
+                
+                NSMutableDictionary *placeDict=[[NSMutableDictionary alloc] init];
+                [placeDict setObject:@"0" forKey:@"placeId"];
+                [placeDict setObject:[NSString stringWithFormat:@"%@",[topResult thoroughfare]] forKey:@"placeName"];
+                [placeDict setObject:[topResult postalCode] forKey:@"postCode"];
+                [placeDict setObject: @"city" forKey:@"placeType"];
+                [placeDict setObject:[NSString stringWithFormat:@"%@",[topResult thoroughfare]] forKey:@"truncatedPlaceName"];
+
+                [Common setFromAddress:placeDict];
             }
         }];
     }
