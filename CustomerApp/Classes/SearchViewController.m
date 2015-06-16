@@ -97,11 +97,11 @@
     }
     else{
         NSMutableDictionary *addressDict=[[Common fromAddress] mutableCopy];
-        textFromAddress.text=[addressDict objectForKey:@"placeName"] ;
+        textFromAddress.text= [NSString stringWithFormat:@"%@, %@",[addressDict objectForKey:@"placeName"],[addressDict objectForKey:@"postCode"]];
     }
     if ([Common toAddress]!=nil) {
         NSMutableDictionary *addressDict=[[Common toAddress]  mutableCopy];
-        textToAddress.text=[addressDict objectForKey:@"placeName"];
+        textToAddress.text= [NSString stringWithFormat:@"%@, %@",[addressDict objectForKey:@"placeName"],[addressDict objectForKey:@"postCode"]];
     }
     if ([Common JourneyTimings]!=nil) {
         [self convertToDateAndTime:[Common JourneyTimings]];

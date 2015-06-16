@@ -114,13 +114,14 @@
         
         NSArray *splitArray = [addressName componentsSeparatedByString:@","];
         NSString *placeName=@"";
-        for (int i=1; i<= [splitArray count]-1; i++) {
-            
-            placeName=[NSString stringWithFormat:@"%@,%@",placeName,[splitArray objectAtIndex:i]];
-            NSLog(@"placeName address--- %@",placeName);
-        }
-        placeName = [placeName substringFromIndex:2];
+//        for (int i=1; i<= [splitArray count]-1; i++) {
+//            
+//            placeName=[NSString stringWithFormat:@"%@,%@",placeName,[splitArray objectAtIndex:i]];
+//            NSLog(@"placeName address--- %@",placeName);
+//        }
+//        placeName = [placeName substringFromIndex:2];
         
+        placeName = [splitArray objectAtIndex:1];
         NSString *postCode=[splitArray objectAtIndex:0];
         
         [self.placeDict setObject:@"0" forKey:@"placeId"];
