@@ -156,7 +156,7 @@
       
         
         
-		NSArray *keys = [NSArray arrayWithObjects:@"email",@"mobile_no",@"first_name",@"last_name",@"supid",@"srcFrom",@"dstFrom",@"srcPostcode",@"dstPostcode",@"vehicleType",fromPlaceKeyName,toPlaceKeyName,@"srcId",@"dstId",@"distance",@"fare",@"time",@"noOfBag",@"noOfPassenger",@"date",nil];
+		NSArray *keys = [NSArray arrayWithObjects:@"email",@"mobile_no",@"first_name",@"additional_info",@"supid",@"srcFrom",@"dstFrom",@"srcPostcode",@"dstPostcode",@"vehicleType",fromPlaceKeyName,toPlaceKeyName,@"srcId",@"dstId",@"distance",@"fare",@"time",@"noOfBag",@"noOfPassenger",@"date",nil];
         
         NSArray *sdObjects=[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", email],[NSString stringWithFormat:@"%@", mobile],[NSString stringWithFormat:@"%@", fname],[NSString stringWithFormat:@"%@", lname],[NSString stringWithFormat:@"%@", suppID],[[jnyDict objectForKey:@"srcFrom"] lowercaseString],[[jnyDict objectForKey:@"dstFrom"] lowercaseString] ,[jnyDict objectForKey:@"srcPostcode"],[jnyDict objectForKey:@"dstPostcode"],[jnyDict objectForKey:@"vehicleType"],[jnyDict objectForKey:fromPlaceKeyName],[jnyDict objectForKey:toPlaceKeyName],[jnyDict objectForKey:@"srcId"],[jnyDict objectForKey:@"dstId"],distance,fare,[jnyDict objectForKey:@"time"],[jnyDict objectForKey:@"noOfBag"],[jnyDict objectForKey:@"noOfPassenger"],[jnyDict objectForKey:@"date"],nil];
         

@@ -71,8 +71,8 @@
 		[textMobile setPlaceholder:@"Mobile"];
 	}
 	
-	[textFirstName setPlaceholder:@"First Name"];
-	[textLastName setPlaceholder:@"Last Name"];
+	[textFirstName setPlaceholder:@"Name"];
+	[textLastName setPlaceholder:@"Additional Info"];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -81,9 +81,9 @@
     
     self.title=@"Your details";
     self.textFirstName.frame = CGRectMake(19, 93, 278, 38);
-    self.textLastName.frame = CGRectMake(21, 146, 278, 38);
-    self.textEmail.frame = CGRectMake(21, 199, 278, 38);
-    self.textMobile.frame = CGRectMake(21, 257, 278, 38);
+    self.textLastName.frame = CGRectMake(21, 257, 278, 38);
+    self.textEmail.frame = CGRectMake(21, 146, 278, 38);
+    self.textMobile.frame = CGRectMake(21, 199, 278, 38);
     lblDate.text= [NSString stringWithFormat:@"%@",self.jnyDate];
     lblTime.text= [NSString stringWithFormat:@"%@",self.jnyTime];
     
